@@ -36,6 +36,6 @@ begin
   Application.CreateForm(TFormMain, FormMain);
   Application.Run;
 
-  //GlobalCEFApp.Free;
+  GlobalCEFApp.Free;
   GlobalCEFApp:=nil;
 end.

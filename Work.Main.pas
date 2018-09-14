@@ -15,7 +15,11 @@ uses
 
   Work.Table.Customers, Work.Table.Tasks,
   Work.Table.History, Work.DB, System.Rtti, Vcl.Menus, uCEFChromium,
-  uCEFWindowParent, uCEFChromiumWindow, uCEFTypes, uCEFInterfaces, Vcl.CheckLst;
+  uCEFWindowParent, uCEFChromiumWindow, uCEFTypes, uCEFInterfaces, uCEFConstants;
+
+const
+  CEF_AFTERCREATED_GKEEP       = WM_APP + $A10;
+  CEF_AFTERCREATED_JIRA        = WM_APP + $A11;
 
 type
   TCRMMode = (cmNormal, cmMini);
@@ -38,6 +42,7 @@ type
   TNotifyItem = record
    Text:string;
    Kind:TNotifyKind;
+   class function Create(AText:string; AKind:TNotifyKind):TNotifyItem; static;
   end;
   TNotifyStorage = TTableData<TNotifyItem>;
 
@@ -151,9 +156,7 @@ type
     ImageListWinC2: TImageList;
     ButtonFlatGoogleKeep: TButtonFlat;
     PanelGoogleKeep: TPanel;
-    ChromiumWindowGKeep: TChromiumWindow;
     PanelJira: TPanel;
-    ChromiumWindowJira: TChromiumWindow;
     ButtonFlatJira: TButtonFlat;
     Panel16: TPanel;
     ScrollBox1: TScrollBox;
@@ -189,6 +192,11 @@ type
     CheckBoxTaskAutoHG: TCheckBox;
     TableExNotify: TTableEx;
     ButtonFlat5: TButtonFlat;
+    ChromiumJira: TChromium;
+    ChromiumGKeep: TChromium;
+    ChromiumWindowJira: TCEFWindowParent;
+    ChromiumWindowGKeep: TCEFWindowParent;
+    ButtonFlat6: TButtonFlat;
     procedure FormCreate(Sender: TObject);
     procedure TableExCostomersGetData(FCol, FRow: Integer; var Value: string);
     procedure TimerTimeTimer(Sender: TObject);
@@ -229,12 +237,8 @@ type
     procedure Panel16MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure ButtonFlatGoogleKeepClick(Sender: TObject);
-    procedure ChromiumWindowGKeepAfterCreated(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
-    procedure ChromiumWindowJiraAfterCreated(Sender: TObject);
     procedure ButtonFlatJiraClick(Sender: TObject);
-    procedure ChromiumWindowJiraClose(Sender: TObject);
-    procedure ChromiumWindowGKeepClose(Sender: TObject);
     procedure ButtonFlatTaskAutoCProjectClick(Sender: TObject);
     procedure ButtonFlat2Click(Sender: TObject);
     procedure EditTaskJiraChange(Sender: TObject);
@@ -242,6 +246,19 @@ type
     procedure TableExNotifyAfterDrawText(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
     procedure Label1Click(Sender: TObject);
+    procedure ChromiumGKeepBeforePopup(Sender: TObject;
+      const browser: ICefBrowser; const frame: ICefFrame; const targetUrl,
+      targetFrameName: ustring; targetDisposition: TCefWindowOpenDisposition;
+      userGesture: Boolean; const popupFeatures: TCefPopupFeatures;
+      var windowInfo: TCefWindowInfo; var client: ICefClient;
+      var settings: TCefBrowserSettings; var noJavascriptAccess,
+      Result: Boolean);
+    procedure ChromiumJiraAfterCreated(Sender: TObject;
+      const browser: ICefBrowser);
+    procedure ChromiumGKeepAfterCreated(Sender: TObject;
+      const browser: ICefBrowser);
+    procedure FormShow(Sender: TObject);
+    procedure ButtonFlat6Click(Sender: TObject);
    private
     FCWJiraClosed:Boolean;
     FCWGKeepClosed:Boolean;
@@ -261,6 +278,10 @@ type
     FDefHeight:Integer;
 
     procedure CreateTables;
+    procedure BrowserCreatedMsgGKeep(var aMessage : TMessage); message CEF_AFTERCREATED_GKEEP;
+    procedure BrowserCreatedMsgJira(var aMessage : TMessage); message CEF_AFTERCREATED_JIRA;
+    procedure WMEnterMenuLoop(var aMessage: TMessage); message WM_ENTERMENULOOP;
+    procedure WMExitMenuLoop(var aMessage: TMessage); message WM_EXITMENULOOP;
     procedure SetMenuIconColor(Color: TColor);
     procedure ShowPanel(Panel:TPanel);
     procedure SetTaskStateButtons(State:TTaskState);
@@ -270,13 +291,6 @@ type
     procedure InitTables;
     procedure WMMove(var aMessage : TWMMove); message WM_MOVE;
     procedure WMMoving(var aMessage : TMessage); message WM_MOVING;
-    procedure Chromium_OnBeforePopup(Sender: TObject;
-      const browser: ICefBrowser; const frame: ICefFrame; const targetUrl,
-      targetFrameName: ustring; targetDisposition: TCefWindowOpenDisposition;
-      userGesture: Boolean; const popupFeatures: TCefPopupFeatures;
-      var windowInfo: TCefWindowInfo; var client: ICefClient;
-      var settings: TCefBrowserSettings; var noJavascriptAccess,
-      Result: Boolean);
     procedure SetMode(const Value: TCRMMode);
   public
     procedure CreateParams(var Params:TCreateParams); override;
@@ -297,7 +311,6 @@ type
     procedure UpdateTasksTable(ItemID:Integer = -1);
     procedure Quit;
     procedure Waiting;
-    procedure WaitingClose;
 
     property Mode:TCRMMode read FMode write SetMode;
   end;
@@ -305,6 +318,9 @@ type
 const
   WorkPath = 'C:\Projects\';
   WorkDir  = '#Work';
+
+  urlGKeep = 'https://keep.google.com/#label/Рабочий';
+  urlJira = 'http://jira.elt';
 
 
 var
@@ -315,26 +331,33 @@ implementation
 
 {$R *.dfm}
 
+procedure TFormMain.WMEnterMenuLoop(var aMessage: TMessage);
+begin
+ inherited;
+ if (aMessage.wParam = 0) and (GlobalCEFApp <> nil) then GlobalCEFApp.OsmodalLoop := True;
+end;
+
+procedure TFormMain.WMExitMenuLoop(var aMessage: TMessage);
+begin
+ inherited;
+ if (aMessage.wParam = 0) and (GlobalCEFApp <> nil) then GlobalCEFApp.OsmodalLoop := False;
+end;
+
 procedure TFormMain.WMMove(var aMessage : TWMMove);
 begin
  inherited;
- //if (ChromiumWindowGKeep <> nil) then ChromiumWindowGKeep.NotifyMoveOrResizeStarted;
- //if (ChromiumWindowJira <> nil) then ChromiumWindowJira.NotifyMoveOrResizeStarted;
+ //if (ChromiumJira <> nil) then ChromiumJira.NotifyMoveOrResizeStarted;
+ //if (ChromiumGKeep <> nil) then ChromiumGKeep.NotifyMoveOrResizeStarted;
 end;
 
 procedure TFormMain.WMMoving(var aMessage : TMessage);
 begin
  inherited;
- //if (ChromiumWindowGKeep <> nil) then ChromiumWindowGKeep.NotifyMoveOrResizeStarted;
- //if (ChromiumWindowJira <> nil) then ChromiumWindowJira.NotifyMoveOrResizeStarted;
+ //if (ChromiumJira <> nil) then ChromiumJira.NotifyMoveOrResizeStarted;
+ //if (ChromiumGKeep <> nil) then ChromiumGKeep.NotifyMoveOrResizeStarted;
 end;
 
 procedure TFormMain.Waiting;
-begin
- //
-end;
-
-procedure TFormMain.WaitingClose;
 begin
  //
 end;
@@ -421,6 +444,8 @@ procedure TFormMain.OpenPage(Panel: TPanel);
 begin
  if not CanIDoSmt then Exit;
  ShowPanel(Panel);
+ if Panel = PanelGoogleKeep then ChromiumGKeep.NotifyMoveOrResizeStarted;
+ if Panel = PanelJira then ChromiumJira.NotifyMoveOrResizeStarted;
 end;
 
 procedure TFormMain.Panel16MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
@@ -434,10 +459,8 @@ procedure TFormMain.Quit;
 begin
  Waiting;
  Hide;
- ChromiumWindowGKeep.CloseBrowser(True);
- ChromiumWindowJira.CloseBrowser(True);
- ChromiumWindowGKeep.Free;
- ChromiumWindowJira.Free;
+ ChromiumGKeep.CloseBrowser(True);
+ ChromiumJira.CloseBrowser(True);
  Application.Terminate;
 end;
 
@@ -645,9 +668,26 @@ begin
  OpenPage(PanelTableCustomers);
 end;
 
+procedure TFormMain.BrowserCreatedMsgGKeep(var aMessage: TMessage);
+begin
+ ChromiumWindowGKeep.UpdateSize;
+ ChromiumGKeep.LoadURL(urlGKeep);
+end;
+
+procedure TFormMain.BrowserCreatedMsgJira(var aMessage: TMessage);
+begin
+ ChromiumWindowJira.UpdateSize;
+ ChromiumJira.LoadURL(urlJira);
+end;
+
 procedure TFormMain.ButtonFlat2Click(Sender: TObject);
 begin
  CheckBoxTaskAutoHG.Checked:=not CheckBoxTaskAutoHG.Checked;
+end;
+
+procedure TFormMain.ButtonFlat6Click(Sender: TObject);
+begin
+ ChromiumJira.Reload;
 end;
 
 procedure TFormMain.ButtonFlatAddOtherClick(Sender: TObject);
@@ -737,35 +777,30 @@ begin
   ShowWrongInfo('Сначала необходимо завершить работу с модальным окном');
 end;
 
-procedure TFormMain.Chromium_OnBeforePopup(Sender: TObject;
+procedure TFormMain.ChromiumGKeepAfterCreated(Sender: TObject; const browser: ICefBrowser);
+begin
+ if ChromiumGKeep.IsSameBrowser(browser) then
+  PostMessage(Handle, CEF_AFTERCREATED_GKEEP, 0, 0)
+ else
+  SendMessage(browser.Host.WindowHandle, WM_SETICON, 1, Application.Icon.Handle);
+end;
+
+procedure TFormMain.ChromiumJiraAfterCreated(Sender: TObject; const browser: ICefBrowser);
+begin
+ if ChromiumJira.IsSameBrowser(browser) then
+  PostMessage(Handle, CEF_AFTERCREATED_JIRA, 0, 0)
+ else
+  SendMessage(browser.Host.WindowHandle, WM_SETICON, 1, Application.Icon.Handle);
+end;
+
+procedure TFormMain.ChromiumGKeepBeforePopup(Sender: TObject;
   const browser: ICefBrowser; const frame: ICefFrame; const targetUrl,
   targetFrameName: ustring; targetDisposition: TCefWindowOpenDisposition;
   userGesture: Boolean; const popupFeatures: TCefPopupFeatures;
   var windowInfo: TCefWindowInfo; var client: ICefClient;
-  var settings: TCefBrowserSettings; var noJavascriptAccess: Boolean;
-  var Result: Boolean);
+  var settings: TCefBrowserSettings; var noJavascriptAccess, Result: Boolean);
 begin
  Result:=(targetDisposition in [WOD_NEW_FOREGROUND_TAB, WOD_NEW_BACKGROUND_TAB, WOD_NEW_POPUP, WOD_NEW_WINDOW]);
-end;
-
-procedure TFormMain.ChromiumWindowGKeepAfterCreated(Sender: TObject);
-begin
- ChromiumWindowGKeep.LoadURL('https://keep.google.com');
-end;
-
-procedure TFormMain.ChromiumWindowGKeepClose(Sender: TObject);
-begin
- FCWGKeepClosed:=True;
-end;
-
-procedure TFormMain.ChromiumWindowJiraAfterCreated(Sender: TObject);
-begin
- ChromiumWindowJira.LoadURL('http://jira.elt/');
-end;
-
-procedure TFormMain.ChromiumWindowJiraClose(Sender: TObject);
-begin
- FCWJiraClosed:=True;
 end;
 
 procedure TFormMain.CreateTables;
@@ -971,6 +1006,7 @@ begin
  FNotify.Bottom:=10;
  FNotify.Right:=10;
  FNotifyStorage:=TNotifyStorage.Create(TableExNotify);
+ //FNotifyStorage.Add(TNotifyItem.Create('Нет', nkInfo));
  //Инициализация БД
  FCore:=TDatabaseCore.Create(ExtractFilePath(Application.ExeName)+'data.db');
  if not FCore.Work then Application.Terminate;
@@ -985,16 +1021,19 @@ begin
  ShowPanel(PanelFeed);
  TM:=GetTickCount - TM;
  //ShowMessage(FloatToStr(TM / 1000));
- //ChromiumWindow.ChromiumBrowser.Options
- //ChromiumWindowGKeep.ChromiumBrowser.OnBeforePopup:=Chromium_OnBeforePopup;
- //ChromiumWindowJira.ChromiumBrowser.OnBeforePopup:=Chromium_OnBeforePopup;
- //ChromiumWindowGKeep.CreateBrowser;
- //ChromiumWindowJira.CreateBrowser;
 end;
 
 procedure TFormMain.FormResize(Sender: TObject);
 begin
  if Assigned(FNotify) then FNotify.UpdateGlobalSize;
+end;
+
+procedure TFormMain.FormShow(Sender: TObject);
+begin
+ if not ChromiumJira.Initialized then
+  while not (ChromiumJira.CreateBrowser(ChromiumWindowJira, '')) do Application.ProcessMessages;
+ if not ChromiumGKeep.Initialized then
+  while not (ChromiumGKeep.CreateBrowser(ChromiumWindowGKeep, '')) do Application.ProcessMessages;
 end;
 
 procedure TFormMain.TableExCostomersGetData(FCol, FRow: Integer; var Value: string);
@@ -1151,7 +1190,13 @@ var TxtRect:TRect;
     AH:Integer;
     Str:string;
 begin
- if not IndexInList(ARow, FHotTasks.Count) then Exit;
+ if not IndexInList(ARow, FHotTasks.Count) then
+  begin
+   Str:='Нет задач';
+   TableExHotTasks.Canvas.TextRect(Rect, Str, [tfCenter, tfVerticalCenter, tfSingleLine]);
+   Exit
+  end;
+
  if ACol <> 0 then Exit;
  with TableExHotTasks.Canvas do
   begin
@@ -1223,7 +1268,7 @@ end;
 
 procedure TFormMain.TableExNotifyGetData(FCol, FRow: Integer; var Value: string);
 begin
- Value:='';
+ Value:='Нет уведомлений';
  if not IndexInList(FRow, FNotifyStorage.Count) then Exit;
  case FCol of
   0:Value:=FNotifyStorage[FRow].Text;
@@ -1291,6 +1336,14 @@ end;
 procedure TAppState.OpenModal;
 begin
  Inc(FModals);
+end;
+
+{ TNotifyItem }
+
+class function TNotifyItem.Create(AText: string; AKind: TNotifyKind): TNotifyItem;
+begin
+ Result.Text:=AText;
+ Result.Kind:=AKind;
 end;
 
 end.

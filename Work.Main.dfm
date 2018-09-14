@@ -16,6 +16,7 @@ object FormMain: TFormMain
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnResize = FormResize
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object PanelHeader: TPanel
@@ -28,7 +29,6 @@ object FormMain: TFormMain
     Color = 6904915
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1199
     object Shape1: TShape
       Left = 817
       Top = 0
@@ -229,19 +229,18 @@ object FormMain: TFormMain
   object PanelLeft: TPanel
     Left = 0
     Top = 57
-    Width = 235
+    Width = 225
     Height = 606
     Align = alLeft
     BevelOuter = bvNone
     Color = 16052974
     ParentBackground = False
     TabOrder = 2
-    ExplicitHeight = 701
     object Panel4: TPanel
       AlignWithMargins = True
       Left = 10
       Top = 10
-      Width = 222
+      Width = 212
       Height = 62
       Margins.Left = 10
       Margins.Top = 10
@@ -339,7 +338,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 10
       Top = 85
-      Width = 215
+      Width = 205
       Height = 28
       Cursor = crDefault
       Margins.Left = 10
@@ -379,7 +378,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 184
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -421,7 +420,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 152
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -463,7 +462,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 280
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -505,7 +504,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 10
       Top = 315
-      Width = 215
+      Width = 205
       Height = 28
       Cursor = crDefault
       Margins.Left = 10
@@ -547,7 +546,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 120
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -589,7 +588,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 10
       Top = 358
-      Width = 215
+      Width = 205
       Height = 28
       Cursor = crDefault
       Margins.Left = 10
@@ -629,7 +628,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 393
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -670,7 +669,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 248
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -712,7 +711,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 15
       Top = 216
-      Width = 205
+      Width = 195
       Height = 28
       Margins.Left = 15
       Margins.Top = 2
@@ -753,10 +752,8 @@ object FormMain: TFormMain
     object TableExNotify: TTableEx
       Left = 0
       Top = 465
-      Width = 235
+      Width = 225
       Height = 141
-      ProcEmpty = False
-      ColumnsHeight = 30
       Align = alBottom
       BorderStyle = bsNone
       Color = 16052974
@@ -765,14 +762,13 @@ object FormMain: TFormMain
       AfterDrawText = TableExNotifyAfterDrawText
       ItemIndex = -1
       GetData = TableExNotifyGetData
+      ProcEmpty = True
+      ShowScrollBar = False
       CanNoSelect = False
-      VisibleEdit = True
       ItemCount = 1
       LineColor = 16052974
       LineColorXor = 16052974
-      LineHotColor = 14474460
       LineSelColor = 9539985
-      ColumnsColor = 14474460
       FontHotLine.Charset = DEFAULT_CHARSET
       FontHotLine.Color = 2631720
       FontHotLine.Height = -13
@@ -794,10 +790,7 @@ object FormMain: TFormMain
       ColumnsFont.Height = -11
       ColumnsFont.Name = 'Tahoma'
       ColumnsFont.Style = []
-      SetFocusOnEnter = False
       DrawColumnBorded = False
-      FlashSelectedCol = False
-      ExplicitTop = 560
       ColWidths = (
         60)
       RowHeights = (
@@ -807,7 +800,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 10
       Top = 432
-      Width = 215
+      Width = 205
       Height = 28
       Cursor = crDefault
       Margins.Left = 10
@@ -842,103 +835,55 @@ object FormMain: TFormMain
       TabOrder = 12
       TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
-      ExplicitTop = 527
     end
   end
   object PanelClient: TPanel
-    Left = 235
+    Left = 225
     Top = 57
-    Width = 973
+    Width = 983
     Height = 606
     Align = alClient
     BevelOuter = bvNone
     Color = 16052974
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 964
-    ExplicitHeight = 701
     object PanelGoogleKeep: TPanel
       Left = 0
       Top = 0
-      Width = 973
+      Width = 983
       Height = 606
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 5
       Visible = False
-      ExplicitWidth = 964
-      ExplicitHeight = 701
-      object ChromiumWindowGKeep: TChromiumWindow
+      object ChromiumWindowGKeep: TCEFWindowParent
         Left = 0
         Top = 0
-        Width = 973
+        Width = 983
         Height = 606
         Align = alClient
         TabOrder = 0
         DoubleBuffered = False
         ParentDoubleBuffered = False
-        OnClose = ChromiumWindowGKeepClose
-        OnAfterCreated = ChromiumWindowGKeepAfterCreated
-        ExplicitWidth = 964
-        ExplicitHeight = 701
-      end
-    end
-    object PanelJira: TPanel
-      Left = 0
-      Top = 0
-      Width = 973
-      Height = 606
-      Align = alClient
-      BevelOuter = bvNone
-      TabOrder = 6
-      Visible = False
-      ExplicitWidth = 964
-      ExplicitHeight = 701
-      object ChromiumWindowJira: TChromiumWindow
-        Left = 0
-        Top = 49
-        Width = 973
-        Height = 557
-        Align = alClient
-        TabOrder = 0
-        DoubleBuffered = False
-        ParentDoubleBuffered = False
-        OnClose = ChromiumWindowJiraClose
-        OnAfterCreated = ChromiumWindowJiraAfterCreated
-        ExplicitWidth = 964
-        ExplicitHeight = 652
-      end
-      object Panel16: TPanel
-        Left = 0
-        Top = 0
-        Width = 973
-        Height = 49
-        Align = alTop
-        BevelOuter = bvNone
-        TabOrder = 1
-        ExplicitWidth = 964
       end
     end
     object PanelCustomer: TPanel
       Left = 0
       Top = 0
-      Width = 973
+      Width = 983
       Height = 606
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 4
       Visible = False
-      ExplicitWidth = 964
-      ExplicitHeight = 701
       object Panel21: TPanel
         Left = 0
         Top = 0
-        Width = 973
+        Width = 983
         Height = 82
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitWidth = 964
         object LabelSelCustomer: TLabel
           AlignWithMargins = True
           Left = 15
@@ -962,7 +907,7 @@ object FormMain: TFormMain
         AlignWithMargins = True
         Left = 0
         Top = 82
-        Width = 953
+        Width = 963
         Height = 524
         Margins.Left = 0
         Margins.Top = 0
@@ -976,31 +921,26 @@ object FormMain: TFormMain
         Padding.Right = 1
         ParentBackground = False
         TabOrder = 1
-        ExplicitWidth = 944
-        ExplicitHeight = 619
         object Panel23: TPanel
           Left = 1
           Top = 1
-          Width = 951
+          Width = 961
           Height = 523
           Align = alClient
           BevelOuter = bvNone
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 942
-          ExplicitHeight = 618
           object Panel24: TPanel
             Left = 0
             Top = 0
-            Width = 951
+            Width = 961
             Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
             ParentBackground = False
             TabOrder = 0
-            ExplicitWidth = 942
             object ButtonFlatCustomerSave: TButtonFlat
               AlignWithMargins = True
               Left = 5
@@ -1090,7 +1030,7 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 5
             Top = 45
-            Width = 941
+            Width = 951
             Height = 193
             Margins.Left = 5
             Margins.Top = 5
@@ -1101,8 +1041,6 @@ object FormMain: TFormMain
             Color = 16250610
             ParentBackground = False
             TabOrder = 1
-            ExplicitWidth = 932
-            ExplicitHeight = 288
             object Label12: TLabel
               Left = 17
               Top = 24
@@ -1209,7 +1147,7 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 5
             Top = 243
-            Width = 941
+            Width = 951
             Height = 280
             Margins.Left = 5
             Margins.Top = 5
@@ -1220,13 +1158,11 @@ object FormMain: TFormMain
             Color = 16250610
             ParentBackground = False
             TabOrder = 2
-            ExplicitTop = 338
-            ExplicitWidth = 932
             object Label15: TLabel
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 921
+              Width = 931
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -1246,27 +1182,19 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 48
-              Width = 921
+              Width = 931
               Height = 222
               Margins.Left = 10
               Margins.Top = 10
               Margins.Right = 10
               Margins.Bottom = 10
-              ProcEmpty = False
-              ColumnsHeight = 30
               Align = alClient
               DefaultRowHeight = 25
               TabOrder = 0
               ItemIndex = -1
               GetData = TableExCustomerTasksGetData
               CanNoSelect = False
-              VisibleEdit = True
               ItemCount = 1
-              LineColor = 15856370
-              LineColorXor = 15198440
-              LineHotColor = 14474460
-              LineSelColor = 7105644
-              ColumnsColor = 14474460
               FontHotLine.Charset = DEFAULT_CHARSET
               FontHotLine.Color = 2631720
               FontHotLine.Height = -11
@@ -1288,10 +1216,6 @@ object FormMain: TFormMain
               ColumnsFont.Height = -11
               ColumnsFont.Name = 'Tahoma'
               ColumnsFont.Style = []
-              SetFocusOnEnter = False
-              DrawColumnBorded = True
-              FlashSelectedCol = False
-              ExplicitWidth = 912
               ColWidths = (
                 60)
               RowHeights = (
@@ -1304,28 +1228,25 @@ object FormMain: TFormMain
     object PanelTableCustomers: TPanel
       Left = 0
       Top = 0
-      Width = 973
+      Width = 983
       Height = 606
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 0
       Visible = False
-      ExplicitWidth = 964
-      ExplicitHeight = 701
       object PanelTableCustomerHead: TPanel
         Left = 0
         Top = 0
-        Width = 973
+        Width = 983
         Height = 82
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitWidth = 964
         object Label3: TLabel
           AlignWithMargins = True
           Left = 15
           Top = 3
-          Width = 923
+          Width = 933
           Height = 76
           Margins.Left = 15
           Margins.Right = 35
@@ -1346,7 +1267,7 @@ object FormMain: TFormMain
         AlignWithMargins = True
         Left = 0
         Top = 82
-        Width = 953
+        Width = 963
         Height = 524
         Margins.Left = 0
         Margins.Top = 0
@@ -1360,32 +1281,26 @@ object FormMain: TFormMain
         Padding.Right = 1
         ParentBackground = False
         TabOrder = 1
-        ExplicitWidth = 944
-        ExplicitHeight = 619
         object Panel5: TPanel
           Left = 1
           Top = 1
-          Width = 951
+          Width = 961
           Height = 523
           Align = alClient
           BevelOuter = bvNone
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 942
-          ExplicitHeight = 618
           object TableExCustomers: TTableEx
             AlignWithMargins = True
             Left = 5
             Top = 45
-            Width = 941
+            Width = 951
             Height = 478
             Margins.Left = 5
             Margins.Top = 5
             Margins.Right = 5
             Margins.Bottom = 0
-            ProcEmpty = False
-            ColumnsHeight = 30
             Align = alClient
             BorderStyle = bsNone
             Color = clWhite
@@ -1394,7 +1309,6 @@ object FormMain: TFormMain
             ItemIndex = -1
             GetData = TableExCostomersGetData
             CanNoSelect = False
-            VisibleEdit = True
             ItemCount = 1
             LineColor = clWhite
             LineColorXor = clWhite
@@ -1421,12 +1335,7 @@ object FormMain: TFormMain
             ColumnsFont.Height = -11
             ColumnsFont.Name = 'Tahoma'
             ColumnsFont.Style = []
-            SetFocusOnEnter = False
             ShowFocus = True
-            DrawColumnBorded = True
-            FlashSelectedCol = False
-            ExplicitWidth = 932
-            ExplicitHeight = 573
             ColWidths = (
               60)
             RowHeights = (
@@ -1436,14 +1345,13 @@ object FormMain: TFormMain
           object Panel6: TPanel
             Left = 0
             Top = 0
-            Width = 951
+            Width = 961
             Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
             ParentBackground = False
             TabOrder = 1
-            ExplicitWidth = 942
             object ButtonFlatCustomersAdd: TButtonFlat
               AlignWithMargins = True
               Left = 5
@@ -1572,7 +1480,7 @@ object FormMain: TFormMain
             end
             object ButtonFlatCustomersLoad: TButtonFlat
               AlignWithMargins = True
-              Left = 905
+              Left = 915
               Top = 5
               Width = 41
               Height = 30
@@ -1611,511 +1519,7 @@ object FormMain: TFormMain
               TabOrder = 3
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-              ExplicitLeft = 896
             end
-          end
-        end
-      end
-    end
-    object PanelFeed: TPanel
-      Left = 0
-      Top = 0
-      Width = 973
-      Height = 606
-      Align = alClient
-      BevelOuter = bvNone
-      TabOrder = 3
-      ExplicitWidth = 964
-      ExplicitHeight = 701
-      object Panel17: TPanel
-        Left = 0
-        Top = 0
-        Width = 973
-        Height = 82
-        Align = alTop
-        BevelOuter = bvNone
-        TabOrder = 0
-        ExplicitWidth = 964
-        object Label10: TLabel
-          AlignWithMargins = True
-          Left = 15
-          Top = 3
-          Width = 250
-          Height = 76
-          Margins.Left = 15
-          Align = alLeft
-          AutoSize = False
-          Caption = #1051#1077#1085#1090#1072
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 6250335
-          Font.Height = -33
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          Layout = tlCenter
-        end
-      end
-      object Panel18: TPanel
-        AlignWithMargins = True
-        Left = 0
-        Top = 82
-        Width = 953
-        Height = 524
-        Margins.Left = 0
-        Margins.Top = 0
-        Margins.Right = 20
-        Margins.Bottom = 0
-        Align = alClient
-        BevelOuter = bvNone
-        Color = 15724009
-        Padding.Left = 1
-        Padding.Top = 1
-        Padding.Right = 1
-        ParentBackground = False
-        TabOrder = 1
-        ExplicitWidth = 944
-        ExplicitHeight = 619
-        object Panel19: TPanel
-          Left = 1
-          Top = 1
-          Width = 951
-          Height = 523
-          Align = alClient
-          BevelOuter = bvNone
-          Color = clWhite
-          Padding.Left = 10
-          Padding.Top = 10
-          Padding.Right = 10
-          ParentBackground = False
-          TabOrder = 0
-          ExplicitWidth = 942
-          ExplicitHeight = 618
-          object Panel20: TPanel
-            Left = 10
-            Top = 10
-            Width = 931
-            Height = 50
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            ParentBackground = False
-            TabOrder = 0
-            ExplicitWidth = 922
-            object ButtonFlatFeedNewTask: TButtonFlat
-              AlignWithMargins = True
-              Left = 5
-              Top = 5
-              Width = 122
-              Height = 40
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 0
-              Margins.Bottom = 5
-              Align = alLeft
-              Caption = #1047#1072#1076#1072#1095#1072
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -16
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = 6250335
-              FontOver.Height = -16
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = 6250335
-              FontDown.Height = -16
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 0
-              Images = ImageListSmall
-              OnClick = ButtonFlatTasksAddClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 0
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-            object ButtonFlatFeedNewCustomer: TButtonFlat
-              AlignWithMargins = True
-              Left = 132
-              Top = 5
-              Width = 133
-              Height = 40
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 0
-              Margins.Bottom = 5
-              Align = alLeft
-              Caption = #1047#1072#1082#1072#1079#1095#1080#1082
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -16
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = 6250335
-              FontOver.Height = -16
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = 6250335
-              FontDown.Height = -16
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 0
-              Images = ImageListSmall
-              OnClick = ButtonFlatCustomersAddClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 1
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-            object Panel29: TPanel
-              AlignWithMargins = True
-              Left = 629
-              Top = 5
-              Width = 297
-              Height = 40
-              Margins.Left = 0
-              Margins.Top = 5
-              Margins.Right = 5
-              Margins.Bottom = 5
-              Align = alRight
-              BevelKind = bkFlat
-              BevelOuter = bvNone
-              TabOrder = 2
-              ExplicitLeft = 620
-              object EditSearchFeed: TEdit
-                Left = 0
-                Top = 0
-                Width = 257
-                Height = 36
-                Margins.Top = 8
-                Margins.Bottom = 0
-                Align = alClient
-                BevelInner = bvSpace
-                BevelKind = bkSoft
-                BevelOuter = bvNone
-                BevelWidth = 8
-                BorderStyle = bsNone
-                TabOrder = 0
-                TextHint = #1048#1089#1082#1072#1090#1100' '#1079#1072#1082#1072#1079#1095#1080#1082#1072', '#1079#1072#1076#1072#1095#1091', '#1087#1088#1086#1095#1077#1077'...'
-              end
-              object ButtonFlatSearchFeed: TButtonFlat
-                Left = 257
-                Top = 0
-                Width = 36
-                Height = 36
-                Align = alRight
-                Caption = ''
-                ColorNormal = clWhite
-                ColorOver = clWhite
-                ColorPressed = clWhite
-                Flat = False
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = clWhite
-                Font.Height = -13
-                Font.Name = 'Tahoma'
-                Font.Style = []
-                FontOver.Charset = DEFAULT_CHARSET
-                FontOver.Color = clWhite
-                FontOver.Height = -13
-                FontOver.Name = 'Tahoma'
-                FontOver.Style = []
-                FontDown.Charset = DEFAULT_CHARSET
-                FontDown.Color = clWhite
-                FontDown.Height = -13
-                FontDown.Name = 'Tahoma'
-                FontDown.Style = []
-                IgnorBounds = True
-                ImageIndentLeft = 7
-                ImageIndentRight = 3
-                ImageIndex = 14
-                Images = ImageListSmall
-                RoundRectParam = 0
-                TabOrder = 1
-                TabStop = True
-                TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-              end
-            end
-          end
-          object PanelFeedHotTasks: TPanel
-            AlignWithMargins = True
-            Left = 654
-            Top = 78
-            Width = 267
-            Height = 395
-            Margins.Right = 20
-            Margins.Bottom = 50
-            Align = alRight
-            BevelOuter = bvNone
-            Color = 14867923
-            Padding.Left = 1
-            Padding.Top = 1
-            Padding.Right = 1
-            Padding.Bottom = 1
-            ParentBackground = False
-            TabOrder = 1
-            ExplicitLeft = 645
-            ExplicitHeight = 490
-            object TableExHotTasks: TTableEx
-              Left = 1
-              Top = 43
-              Width = 265
-              Height = 351
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 5
-              Margins.Bottom = 0
-              ProcEmpty = False
-              ColumnsHeight = 30
-              Align = alClient
-              BorderStyle = bsNone
-              Color = clWhite
-              DefaultRowHeight = 120
-              TabOrder = 0
-              DefaultDataDrawing = False
-              OnDrawCellData = TableExHotTasksDrawCellData
-              ItemIndex = -1
-              OnItemClick = TableExHotTasksItemClick
-              CanNoSelect = False
-              VisibleEdit = True
-              ItemCount = 1
-              LineColor = clWhite
-              LineColorXor = clWhite
-              LineHotColor = clWhite
-              LineSelColor = clWhite
-              ColumnsColor = 15329769
-              FontHotLine.Charset = DEFAULT_CHARSET
-              FontHotLine.Color = 2631720
-              FontHotLine.Height = -13
-              FontHotLine.Name = 'Tahoma'
-              FontHotLine.Style = []
-              FontLine.Charset = DEFAULT_CHARSET
-              FontLine.Color = 2631720
-              FontLine.Height = -13
-              FontLine.Name = 'Tahoma'
-              FontLine.Style = []
-              FontSelLine.Charset = DEFAULT_CHARSET
-              FontSelLine.Color = 2631720
-              FontSelLine.Height = -13
-              FontSelLine.Name = 'Tahoma'
-              FontSelLine.Style = []
-              ShowColumns = False
-              ColumnsFont.Charset = DEFAULT_CHARSET
-              ColumnsFont.Color = 2631720
-              ColumnsFont.Height = -11
-              ColumnsFont.Name = 'Tahoma'
-              ColumnsFont.Style = []
-              SetFocusOnEnter = False
-              DrawColumnBorded = True
-              FlashSelectedCol = True
-              ExplicitHeight = 446
-              ColWidths = (
-                60)
-              RowHeights = (
-                120)
-            end
-            object Panel26: TPanel
-              Left = 1
-              Top = 1
-              Width = 265
-              Height = 40
-              Margins.Left = 1
-              Margins.Top = 1
-              Margins.Right = 1
-              Margins.Bottom = 1
-              Align = alTop
-              Alignment = taLeftJustify
-              BevelOuter = bvNone
-              Caption = '  '#1041#1083#1080#1078#1072#1081#1096#1080#1077' '#1079#1072#1076#1072#1095#1080
-              Color = clWhite
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 3881787
-              Font.Height = -17
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              ParentBackground = False
-              ParentFont = False
-              TabOrder = 1
-              object ButtonFlatFeedUpdate: TButtonFlat
-                AlignWithMargins = True
-                Left = 219
-                Top = 5
-                Width = 41
-                Height = 30
-                Margins.Left = 5
-                Margins.Top = 5
-                Margins.Right = 5
-                Margins.Bottom = 5
-                Align = alRight
-                Caption = ''
-                ColorNormal = 16250610
-                ColorOver = 16514041
-                ColorPressed = 15789800
-                Flat = False
-                Font.Charset = DEFAULT_CHARSET
-                Font.Color = 6250335
-                Font.Height = -13
-                Font.Name = 'Segoe UI'
-                Font.Style = [fsBold]
-                FontOver.Charset = DEFAULT_CHARSET
-                FontOver.Color = clWhite
-                FontOver.Height = -13
-                FontOver.Name = 'Segoe UI'
-                FontOver.Style = [fsBold]
-                FontDown.Charset = DEFAULT_CHARSET
-                FontDown.Color = clWhite
-                FontDown.Height = -13
-                FontDown.Name = 'Segoe UI'
-                FontDown.Style = [fsBold]
-                IgnorBounds = True
-                ImageIndentLeft = 8
-                ImageIndex = 13
-                Images = ImageListSmall
-                OnClick = ButtonFlatFeedUpdateClick
-                RoundRectParam = 8
-                Shape = stRoundRect
-                TabOrder = 0
-                TabStop = True
-                TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-              end
-            end
-            object Panel27: TPanel
-              Left = 1
-              Top = 41
-              Width = 265
-              Height = 2
-              Align = alTop
-              BevelOuter = bvNone
-              Color = clWhite
-              ParentBackground = False
-              TabOrder = 2
-              object Shape3: TShape
-                AlignWithMargins = True
-                Left = 5
-                Top = 0
-                Width = 255
-                Height = 1
-                Margins.Left = 5
-                Margins.Top = 0
-                Margins.Right = 5
-                Margins.Bottom = 0
-                Align = alTop
-                Brush.Color = clSilver
-                Pen.Color = clSilver
-                ExplicitLeft = 6
-                ExplicitTop = 41
-                ExplicitWidth = 298
-              end
-            end
-          end
-          object Panel28: TPanel
-            AlignWithMargins = True
-            Left = 15
-            Top = 65
-            Width = 921
-            Height = 5
-            Margins.Left = 5
-            Margins.Top = 5
-            Margins.Right = 5
-            Margins.Bottom = 5
-            Align = alTop
-            BevelOuter = bvNone
-            TabOrder = 2
-            ExplicitWidth = 912
-            object Shape4: TShape
-              AlignWithMargins = True
-              Left = 5
-              Top = 2
-              Width = 911
-              Height = 1
-              Margins.Left = 5
-              Margins.Top = 2
-              Margins.Right = 5
-              Margins.Bottom = 2
-              Align = alClient
-              Brush.Color = 15461355
-              Pen.Color = 15461355
-              ExplicitWidth = 932
-            end
-          end
-          object TableExFeed: TTableEx
-            AlignWithMargins = True
-            Left = 13
-            Top = 78
-            Width = 635
-            Height = 442
-            ProcEmpty = False
-            ColumnsHeight = 30
-            Align = alClient
-            BevelInner = bvSpace
-            BorderStyle = bsNone
-            DefaultRowHeight = 50
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Helvetica'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 3
-            ShowScrollBar = False
-            DefaultDataDrawing = False
-            OnDrawCellData = TableExFeedDrawCellData
-            ItemIndex = -1
-            CanNoSelect = True
-            VisibleEdit = False
-            ItemCount = 1
-            LineColor = 15856370
-            LineColorXor = 15198440
-            LineHotColor = 14474460
-            LineSelColor = 7105644
-            ColumnsColor = 14474460
-            FontHotLine.Charset = DEFAULT_CHARSET
-            FontHotLine.Color = 2631720
-            FontHotLine.Height = -11
-            FontHotLine.Name = 'Tahoma'
-            FontHotLine.Style = []
-            FontLine.Charset = DEFAULT_CHARSET
-            FontLine.Color = 2631720
-            FontLine.Height = -11
-            FontLine.Name = 'Tahoma'
-            FontLine.Style = []
-            FontSelLine.Charset = DEFAULT_CHARSET
-            FontSelLine.Color = clWhite
-            FontSelLine.Height = -11
-            FontSelLine.Name = 'Tahoma'
-            FontSelLine.Style = []
-            ShowColumns = False
-            ColumnsFont.Charset = DEFAULT_CHARSET
-            ColumnsFont.Color = 2631720
-            ColumnsFont.Height = -11
-            ColumnsFont.Name = 'Tahoma'
-            ColumnsFont.Style = []
-            SetFocusOnEnter = True
-            DrawColumnBorded = True
-            FlashSelectedCol = False
-            ExplicitWidth = 626
-            ExplicitHeight = 537
-            ColWidths = (
-              60)
-            RowHeights = (
-              50)
           end
         end
       end
@@ -2123,28 +1527,25 @@ object FormMain: TFormMain
     object PanelTask: TPanel
       Left = 0
       Top = 0
-      Width = 973
+      Width = 983
       Height = 606
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2
       Visible = False
-      ExplicitWidth = 964
-      ExplicitHeight = 701
       object Panel12: TPanel
         Left = 0
         Top = 0
-        Width = 973
+        Width = 983
         Height = 82
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitWidth = 964
         object LabelSelectTask: TLabel
           AlignWithMargins = True
           Left = 15
           Top = 3
-          Width = 923
+          Width = 933
           Height = 76
           Margins.Left = 15
           Margins.Right = 35
@@ -2165,7 +1566,7 @@ object FormMain: TFormMain
         AlignWithMargins = True
         Left = 0
         Top = 82
-        Width = 953
+        Width = 963
         Height = 524
         Margins.Left = 0
         Margins.Top = 0
@@ -2179,31 +1580,26 @@ object FormMain: TFormMain
         Padding.Right = 1
         ParentBackground = False
         TabOrder = 1
-        ExplicitWidth = 944
-        ExplicitHeight = 619
         object Panel14: TPanel
           Left = 1
           Top = 1
-          Width = 951
+          Width = 961
           Height = 523
           Align = alClient
           BevelOuter = bvNone
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 942
-          ExplicitHeight = 618
           object Panel15: TPanel
             Left = 0
             Top = 0
-            Width = 951
+            Width = 961
             Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
             ParentBackground = False
             TabOrder = 0
-            ExplicitWidth = 942
             object ButtonFlatTaskSave: TButtonFlat
               AlignWithMargins = True
               Left = 5
@@ -2293,7 +1689,7 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 5
             Top = 45
-            Width = 941
+            Width = 951
             Height = 478
             Margins.Left = 5
             Margins.Top = 5
@@ -2304,13 +1700,11 @@ object FormMain: TFormMain
             Color = 16250610
             ParentBackground = False
             TabOrder = 1
-            ExplicitWidth = 932
-            ExplicitHeight = 573
             DesignSize = (
-              941
+              951
               478)
             object ScrollBox1: TScrollBox
-              Left = 83
+              Left = 88
               Top = 0
               Width = 771
               Height = 482
@@ -2321,8 +1715,6 @@ object FormMain: TFormMain
               Color = 16250610
               ParentColor = False
               TabOrder = 0
-              ExplicitLeft = 79
-              ExplicitHeight = 577
               object Label5: TLabel
                 Left = 13
                 Top = 81
@@ -2996,28 +2388,25 @@ object FormMain: TFormMain
     object PanelTableTasks: TPanel
       Left = 0
       Top = 0
-      Width = 973
+      Width = 983
       Height = 606
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
       Visible = False
-      ExplicitWidth = 964
-      ExplicitHeight = 701
       object Panel8: TPanel
         Left = 0
         Top = 0
-        Width = 973
+        Width = 983
         Height = 82
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitWidth = 964
         object Label4: TLabel
           AlignWithMargins = True
           Left = 15
           Top = 3
-          Width = 923
+          Width = 933
           Height = 76
           Margins.Left = 15
           Margins.Right = 35
@@ -3038,7 +2427,7 @@ object FormMain: TFormMain
         AlignWithMargins = True
         Left = 0
         Top = 82
-        Width = 953
+        Width = 963
         Height = 524
         Margins.Left = 0
         Margins.Top = 0
@@ -3052,32 +2441,26 @@ object FormMain: TFormMain
         Padding.Right = 1
         ParentBackground = False
         TabOrder = 1
-        ExplicitWidth = 944
-        ExplicitHeight = 619
         object Panel10: TPanel
           Left = 1
           Top = 1
-          Width = 951
+          Width = 961
           Height = 523
           Align = alClient
           BevelOuter = bvNone
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 942
-          ExplicitHeight = 618
           object TableExTasks: TTableEx
             AlignWithMargins = True
             Left = 5
             Top = 45
-            Width = 941
+            Width = 951
             Height = 478
             Margins.Left = 5
             Margins.Top = 5
             Margins.Right = 5
             Margins.Bottom = 0
-            ProcEmpty = False
-            ColumnsHeight = 30
             Align = alClient
             BorderStyle = bsNone
             Color = clWhite
@@ -3087,7 +2470,6 @@ object FormMain: TFormMain
             ItemIndex = -1
             GetData = TableExTasksGetData
             CanNoSelect = False
-            VisibleEdit = True
             ItemCount = 1
             LineColor = clWhite
             LineColorXor = clWhite
@@ -3114,11 +2496,6 @@ object FormMain: TFormMain
             ColumnsFont.Height = -11
             ColumnsFont.Name = 'Tahoma'
             ColumnsFont.Style = []
-            SetFocusOnEnter = False
-            DrawColumnBorded = True
-            FlashSelectedCol = False
-            ExplicitWidth = 932
-            ExplicitHeight = 573
             ColWidths = (
               60)
             RowHeights = (
@@ -3128,14 +2505,13 @@ object FormMain: TFormMain
           object Panel11: TPanel
             Left = 0
             Top = 0
-            Width = 951
+            Width = 961
             Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
             ParentBackground = False
             TabOrder = 1
-            ExplicitWidth = 942
             object ButtonFlatTasksAdd: TButtonFlat
               AlignWithMargins = True
               Left = 5
@@ -3264,7 +2640,7 @@ object FormMain: TFormMain
             end
             object ButtonFlatLoadTasks: TButtonFlat
               AlignWithMargins = True
-              Left = 905
+              Left = 915
               Top = 5
               Width = 41
               Height = 30
@@ -3303,8 +2679,554 @@ object FormMain: TFormMain
               TabOrder = 3
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-              ExplicitLeft = 896
             end
+          end
+        end
+      end
+    end
+    object PanelJira: TPanel
+      Left = 0
+      Top = 0
+      Width = 983
+      Height = 606
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 6
+      Visible = False
+      object Panel16: TPanel
+        Left = 0
+        Top = 0
+        Width = 983
+        Height = 33
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 1
+        object ButtonFlat6: TButtonFlat
+          AlignWithMargins = True
+          Left = 15
+          Top = 2
+          Width = 29
+          Height = 29
+          Margins.Left = 15
+          Margins.Top = 2
+          Margins.Right = 15
+          Margins.Bottom = 2
+          Align = alLeft
+          Caption = ''
+          ColorNormal = 16052974
+          ColorOver = 15592940
+          ColorPressed = 14803424
+          EllipseRectVertical = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 6250335
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          FontOver.Charset = DEFAULT_CHARSET
+          FontOver.Color = 6250335
+          FontOver.Height = -16
+          FontOver.Name = 'Segoe UI'
+          FontOver.Style = []
+          FontDown.Charset = DEFAULT_CHARSET
+          FontDown.Color = 6250335
+          FontDown.Height = -16
+          FontDown.Name = 'Segoe UI'
+          FontDown.Style = []
+          IgnorBounds = True
+          ImageIndentLeft = 2
+          ImageIndentRight = 5
+          ImageIndex = 13
+          Images = ImageListSmall
+          OnClick = ButtonFlat6Click
+          RoundRectParam = 28
+          Shape = stCircle
+          TabOrder = 0
+          TabStop = True
+          TextFormat = [tfSingleLine, tfVerticalCenter]
+        end
+      end
+      object ChromiumWindowJira: TCEFWindowParent
+        Left = 0
+        Top = 33
+        Width = 983
+        Height = 573
+        Align = alClient
+        TabOrder = 0
+        DoubleBuffered = False
+        ParentDoubleBuffered = False
+      end
+    end
+    object PanelFeed: TPanel
+      Left = 0
+      Top = 0
+      Width = 983
+      Height = 606
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 3
+      object Panel17: TPanel
+        Left = 0
+        Top = 0
+        Width = 983
+        Height = 82
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label10: TLabel
+          AlignWithMargins = True
+          Left = 15
+          Top = 3
+          Width = 250
+          Height = 76
+          Margins.Left = 15
+          Align = alLeft
+          AutoSize = False
+          Caption = #1051#1077#1085#1090#1072
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 6250335
+          Font.Height = -33
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          Layout = tlCenter
+        end
+      end
+      object Panel18: TPanel
+        AlignWithMargins = True
+        Left = 0
+        Top = 82
+        Width = 963
+        Height = 524
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 20
+        Margins.Bottom = 0
+        Align = alClient
+        BevelOuter = bvNone
+        Color = 15724009
+        Padding.Left = 1
+        Padding.Top = 1
+        Padding.Right = 1
+        ParentBackground = False
+        TabOrder = 1
+        object Panel19: TPanel
+          Left = 1
+          Top = 1
+          Width = 961
+          Height = 523
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clWhite
+          Padding.Left = 10
+          Padding.Top = 10
+          Padding.Right = 10
+          ParentBackground = False
+          TabOrder = 0
+          object Panel20: TPanel
+            Left = 10
+            Top = 10
+            Width = 941
+            Height = 50
+            Align = alTop
+            BevelOuter = bvNone
+            Color = clWhite
+            ParentBackground = False
+            TabOrder = 0
+            object ButtonFlatFeedNewTask: TButtonFlat
+              AlignWithMargins = True
+              Left = 5
+              Top = 5
+              Width = 122
+              Height = 40
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = #1047#1072#1076#1072#1095#1072
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Flat = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -16
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -16
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 0
+              Images = ImageListSmall
+              OnClick = ButtonFlatTasksAddClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 0
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object ButtonFlatFeedNewCustomer: TButtonFlat
+              AlignWithMargins = True
+              Left = 132
+              Top = 5
+              Width = 133
+              Height = 40
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = #1047#1072#1082#1072#1079#1095#1080#1082
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Flat = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -16
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -16
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 0
+              Images = ImageListSmall
+              OnClick = ButtonFlatCustomersAddClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 1
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object Panel29: TPanel
+              AlignWithMargins = True
+              Left = 639
+              Top = 5
+              Width = 297
+              Height = 40
+              Margins.Left = 0
+              Margins.Top = 5
+              Margins.Right = 5
+              Margins.Bottom = 5
+              Align = alRight
+              BevelKind = bkFlat
+              BevelOuter = bvNone
+              TabOrder = 2
+              object EditSearchFeed: TEdit
+                Left = 0
+                Top = 0
+                Width = 257
+                Height = 36
+                Margins.Top = 8
+                Margins.Bottom = 0
+                Align = alClient
+                BevelInner = bvSpace
+                BevelKind = bkSoft
+                BevelOuter = bvNone
+                BevelWidth = 8
+                BorderStyle = bsNone
+                TabOrder = 0
+                TextHint = #1048#1089#1082#1072#1090#1100' '#1079#1072#1082#1072#1079#1095#1080#1082#1072', '#1079#1072#1076#1072#1095#1091', '#1087#1088#1086#1095#1077#1077'...'
+              end
+              object ButtonFlatSearchFeed: TButtonFlat
+                Left = 257
+                Top = 0
+                Width = 36
+                Height = 36
+                Align = alRight
+                Caption = ''
+                ColorNormal = clWhite
+                ColorOver = clWhite
+                ColorPressed = clWhite
+                Flat = False
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWhite
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = []
+                FontOver.Charset = DEFAULT_CHARSET
+                FontOver.Color = clWhite
+                FontOver.Height = -13
+                FontOver.Name = 'Tahoma'
+                FontOver.Style = []
+                FontDown.Charset = DEFAULT_CHARSET
+                FontDown.Color = clWhite
+                FontDown.Height = -13
+                FontDown.Name = 'Tahoma'
+                FontDown.Style = []
+                IgnorBounds = True
+                ImageIndentLeft = 7
+                ImageIndentRight = 3
+                ImageIndex = 14
+                Images = ImageListSmall
+                RoundRectParam = 0
+                TabOrder = 1
+                TabStop = True
+                TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              end
+            end
+          end
+          object PanelFeedHotTasks: TPanel
+            AlignWithMargins = True
+            Left = 664
+            Top = 78
+            Width = 267
+            Height = 395
+            Margins.Right = 20
+            Margins.Bottom = 50
+            Align = alRight
+            BevelOuter = bvNone
+            Color = 14867923
+            Padding.Left = 1
+            Padding.Top = 1
+            Padding.Right = 1
+            Padding.Bottom = 1
+            ParentBackground = False
+            TabOrder = 1
+            object TableExHotTasks: TTableEx
+              Left = 1
+              Top = 43
+              Width = 265
+              Height = 351
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 5
+              Margins.Bottom = 0
+              Align = alClient
+              BorderStyle = bsNone
+              Color = clWhite
+              DefaultRowHeight = 120
+              TabOrder = 0
+              OnDrawCellData = TableExHotTasksDrawCellData
+              ItemIndex = -1
+              OnItemClick = TableExHotTasksItemClick
+              ProcEmpty = True
+              DefaultDataDrawing = False
+              ShowScrollBar = False
+              CanNoSelect = False
+              ItemCount = 1
+              LineColor = clWhite
+              LineColorXor = clWhite
+              LineHotColor = clWhite
+              LineSelColor = clWhite
+              ColumnsColor = 15329769
+              FontHotLine.Charset = DEFAULT_CHARSET
+              FontHotLine.Color = 2631720
+              FontHotLine.Height = -13
+              FontHotLine.Name = 'Tahoma'
+              FontHotLine.Style = []
+              FontLine.Charset = DEFAULT_CHARSET
+              FontLine.Color = 2631720
+              FontLine.Height = -13
+              FontLine.Name = 'Tahoma'
+              FontLine.Style = []
+              FontSelLine.Charset = DEFAULT_CHARSET
+              FontSelLine.Color = 2631720
+              FontSelLine.Height = -13
+              FontSelLine.Name = 'Tahoma'
+              FontSelLine.Style = []
+              ShowColumns = False
+              ColumnsFont.Charset = DEFAULT_CHARSET
+              ColumnsFont.Color = 2631720
+              ColumnsFont.Height = -11
+              ColumnsFont.Name = 'Tahoma'
+              ColumnsFont.Style = []
+              SetFocusOnEnter = True
+              FlashSelectedCol = True
+              ColWidths = (
+                60)
+              RowHeights = (
+                120)
+            end
+            object Panel26: TPanel
+              Left = 1
+              Top = 1
+              Width = 265
+              Height = 40
+              Margins.Left = 1
+              Margins.Top = 1
+              Margins.Right = 1
+              Margins.Bottom = 1
+              Align = alTop
+              Alignment = taLeftJustify
+              BevelOuter = bvNone
+              Caption = '  '#1041#1083#1080#1078#1072#1081#1096#1080#1077' '#1079#1072#1076#1072#1095#1080
+              Color = clWhite
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 3881787
+              Font.Height = -17
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentBackground = False
+              ParentFont = False
+              TabOrder = 1
+              object ButtonFlatFeedUpdate: TButtonFlat
+                AlignWithMargins = True
+                Left = 219
+                Top = 5
+                Width = 41
+                Height = 30
+                Margins.Left = 5
+                Margins.Top = 5
+                Margins.Right = 5
+                Margins.Bottom = 5
+                Align = alRight
+                Caption = ''
+                ColorNormal = 16250610
+                ColorOver = 16514041
+                ColorPressed = 15789800
+                Flat = False
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = 6250335
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                FontOver.Charset = DEFAULT_CHARSET
+                FontOver.Color = clWhite
+                FontOver.Height = -13
+                FontOver.Name = 'Segoe UI'
+                FontOver.Style = [fsBold]
+                FontDown.Charset = DEFAULT_CHARSET
+                FontDown.Color = clWhite
+                FontDown.Height = -13
+                FontDown.Name = 'Segoe UI'
+                FontDown.Style = [fsBold]
+                IgnorBounds = True
+                ImageIndentLeft = 8
+                ImageIndex = 13
+                Images = ImageListSmall
+                OnClick = ButtonFlatFeedUpdateClick
+                RoundRectParam = 8
+                Shape = stRoundRect
+                TabOrder = 0
+                TabStop = True
+                TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              end
+            end
+            object Panel27: TPanel
+              Left = 1
+              Top = 41
+              Width = 265
+              Height = 2
+              Align = alTop
+              BevelOuter = bvNone
+              Color = clWhite
+              ParentBackground = False
+              TabOrder = 2
+              object Shape3: TShape
+                AlignWithMargins = True
+                Left = 5
+                Top = 0
+                Width = 255
+                Height = 1
+                Margins.Left = 5
+                Margins.Top = 0
+                Margins.Right = 5
+                Margins.Bottom = 0
+                Align = alTop
+                Brush.Color = clSilver
+                Pen.Color = clSilver
+                ExplicitLeft = 6
+                ExplicitTop = 41
+                ExplicitWidth = 298
+              end
+            end
+          end
+          object Panel28: TPanel
+            AlignWithMargins = True
+            Left = 15
+            Top = 65
+            Width = 931
+            Height = 5
+            Margins.Left = 5
+            Margins.Top = 5
+            Margins.Right = 5
+            Margins.Bottom = 5
+            Align = alTop
+            BevelOuter = bvNone
+            TabOrder = 2
+            object Shape4: TShape
+              AlignWithMargins = True
+              Left = 5
+              Top = 2
+              Width = 921
+              Height = 1
+              Margins.Left = 5
+              Margins.Top = 2
+              Margins.Right = 5
+              Margins.Bottom = 2
+              Align = alClient
+              Brush.Color = 15461355
+              Pen.Color = 15461355
+              ExplicitWidth = 932
+            end
+          end
+          object TableExFeed: TTableEx
+            AlignWithMargins = True
+            Left = 13
+            Top = 78
+            Width = 645
+            Height = 442
+            Align = alClient
+            BevelInner = bvSpace
+            BorderStyle = bsNone
+            DefaultRowHeight = 50
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Helvetica'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 3
+            OnDrawCellData = TableExFeedDrawCellData
+            ItemIndex = -1
+            DefaultDataDrawing = False
+            ShowScrollBar = False
+            ItemCount = 1
+            FontHotLine.Charset = DEFAULT_CHARSET
+            FontHotLine.Color = 2631720
+            FontHotLine.Height = -11
+            FontHotLine.Name = 'Tahoma'
+            FontHotLine.Style = []
+            FontLine.Charset = DEFAULT_CHARSET
+            FontLine.Color = 2631720
+            FontLine.Height = -11
+            FontLine.Name = 'Tahoma'
+            FontLine.Style = []
+            FontSelLine.Charset = DEFAULT_CHARSET
+            FontSelLine.Color = clWhite
+            FontSelLine.Height = -11
+            FontSelLine.Name = 'Tahoma'
+            FontSelLine.Style = []
+            ShowColumns = False
+            ColumnsFont.Charset = DEFAULT_CHARSET
+            ColumnsFont.Color = 2631720
+            ColumnsFont.Height = -11
+            ColumnsFont.Name = 'Tahoma'
+            ColumnsFont.Style = []
+            SetFocusOnEnter = True
+            ColWidths = (
+              60)
+            RowHeights = (
+              50)
           end
         end
       end
@@ -6219,5 +6141,17 @@ object FormMain: TFormMain
       E38FFFFFE007C013E7CFFFFFE007FFF3FFFFFFFFFFFFF803FFFFFFFFFFFFF803
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
+  end
+  object ChromiumJira: TChromium
+    OnBeforePopup = ChromiumGKeepBeforePopup
+    OnAfterCreated = ChromiumJiraAfterCreated
+    Left = 684
+    Top = 356
+  end
+  object ChromiumGKeep: TChromium
+    OnBeforePopup = ChromiumGKeepBeforePopup
+    OnAfterCreated = ChromiumGKeepAfterCreated
+    Left = 604
+    Top = 356
   end
 end
