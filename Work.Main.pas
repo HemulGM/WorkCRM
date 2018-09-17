@@ -15,7 +15,8 @@ uses
 
   Work.Table.Customers, Work.Table.Tasks,
   Work.Table.History, Work.DB, System.Rtti, Vcl.Menus, uCEFChromium,
-  uCEFWindowParent, uCEFChromiumWindow, uCEFTypes, uCEFInterfaces, uCEFConstants;
+  uCEFWindowParent, uCEFChromiumWindow, uCEFTypes, uCEFInterfaces, uCEFConstants,
+  acPNG;
 
 const
   CEF_AFTERCREATED_GKEEP       = WM_APP + $A10;
@@ -197,6 +198,24 @@ type
     ChromiumWindowJira: TCEFWindowParent;
     ChromiumWindowGKeep: TCEFWindowParent;
     ButtonFlat6: TButtonFlat;
+    PopupMenuCustomer: TPopupMenu;
+    MenuItemCustEdit: TMenuItem;
+    MenuItemCustTelegram: TMenuItem;
+    MenuItemCustDel: TMenuItem;
+    N3: TMenuItem;
+    ButtonFlatCustomerTelegram: TButtonFlat;
+    ButtonFlatTasksTelegram: TButtonFlat;
+    Panel30: TPanel;
+    Panel31: TPanel;
+    ButtonFlat7: TButtonFlat;
+    ImageListOver: TImageList;
+    Label18: TLabel;
+    Panel32: TPanel;
+    Image1: TImage;
+    LabelCustName: TLabel;
+    Panel33: TPanel;
+    Image2: TImage;
+    Label19: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure TableExCostomersGetData(FCol, FRow: Integer; var Value: string);
     procedure TimerTimeTimer(Sender: TObject);
@@ -259,6 +278,8 @@ type
       const browser: ICefBrowser);
     procedure FormShow(Sender: TObject);
     procedure ButtonFlat6Click(Sender: TObject);
+    procedure ButtonFlatCustomerTelegramClick(Sender: TObject);
+    procedure ButtonFlatTasksTelegramClick(Sender: TObject);
    private
     FCWJiraClosed:Boolean;
     FCWGKeepClosed:Boolean;
@@ -321,6 +342,7 @@ const
 
   urlGKeep = 'https://keep.google.com/#label/Рабочий';
   urlJira = 'http://jira.elt';
+  urlBorda = 'https://live.goodline.info/people/';
 
 
 var
@@ -372,7 +394,12 @@ procedure TFormMain.SetMenuIconColor(Color:TColor);
 var i:Integer;
 begin
  for i:= 0 to ImageList24.Count - 1 do ColorImages(ImageList24, i, Color);
- for i:= 0 to ImageListSmall.Count - 1 do ColorImages(ImageListSmall, i, ColorDarker(Color, 60));
+ for i:= 0 to ImageListSmall.Count - 1 do
+  begin
+   ColorImages(ImageListSmall, i, ColorDarker(Color, 60));
+   ImageListOver.AddImage(ImageListSmall, i);
+   ColorImages(ImageListOver, i, ColorDarker(Color, 80));
+  end;
 
  ColorImages(ImageListSmall, 8, $00005B9C);
  ColorImages(ImageListSmall, 9, $000042F7);
@@ -522,6 +549,16 @@ end;
 procedure TFormMain.ButtonFlatTasksEditClick(Sender: TObject);
 begin
  EditTask;
+end;
+
+procedure TFormMain.ButtonFlatTasksTelegramClick(Sender: TObject);
+var CID:Integer;
+begin
+ if not IndexInList(TableExTasks.ItemIndex, FTasks.Count) then Exit;
+ if FTasks[TableExTasks.ItemIndex].Customer < 0 then Exit;
+ CID:=FCustomers.Find(FTasks[TableExTasks.ItemIndex].Customer);
+ if CID < 0 then Exit;
+ FCustomers[CID].OpenTelegramChat;
 end;
 
 procedure TFormMain.ButtonFlatTaskNewCustomerClick(Sender: TObject);
@@ -730,6 +767,13 @@ procedure TFormMain.ButtonFlatCustomersLoadClick(Sender: TObject);
 begin
  if not CanIDoSmt then Exit;
  FCustomers.Load;
+end;
+
+procedure TFormMain.ButtonFlatCustomerTelegramClick(Sender: TObject);
+begin
+ if not IndexInList(TableExCustomers.ItemIndex, FCustomers.Count) then Exit;
+ if FCustomers[TableExCustomers.ItemIndex].Telegram.IsEmpty then Exit;
+ FCustomers[TableExCustomers.ItemIndex].OpenTelegramChat;
 end;
 
 procedure TFormMain.ButtonFlatLoadTasksClick(Sender: TObject);
@@ -1282,12 +1326,15 @@ begin
  if ACol <> 4 then Exit;
  with TableExTasks.Canvas do
   begin
-   Brush.Color:=clWhite;
-   Pen.Color:=Brush.Color;
-   RoundRect(System.Classes.Rect(Rect.Left + 3, Rect.Top + 3, Rect.Right - 3, Rect.Top + 5 + 24 + 3), 10, 10);
+   //Brush.Color:=clWhite;
+   //Pen.Color:=Brush.Color;
+   Brush.Style:=bsClear;
+
+   //RoundRect(System.Classes.Rect(Rect.Left + 3, Rect.Top + 3, Rect.Right - 3, Rect.Top + 5 + 24 + 3), 10, 10);
    ImageListSmall.Draw(TableExTasks.Canvas, Rect.Left + 5, Rect.Top + 5, 8+Ord(FTasks[ARow].State), True);
    TextOut(Rect.Left + 5 + 24 + 5, Rect.Top + 5 + 3, FTasks[ARow].State.ToString);
-   RoundRect(System.Classes.Rect(Rect.Left + 3, Rect.Top + 5 + 24 + 3 + 3, Rect.Right - 3, Rect.Top + 5 + 24 + 5 + 24 + 3), 10, 10);
+
+   //RoundRect(System.Classes.Rect(Rect.Left + 3, Rect.Top + 5 + 24 + 3 + 3, Rect.Right - 3, Rect.Top + 5 + 24 + 5 + 24 + 3), 10, 10);
    ImageListSmall.Draw(TableExTasks.Canvas, Rect.Left + 5, Rect.Top + 5 + 24 + 5, 16+Ord(FTasks[ARow].Priority), True);
    TextOut(Rect.Left + 5 + 24 + 5, Rect.Top + 5 + 24 + 5 + 5, FTasks[ARow].Priority.ToString);
   end;

@@ -28,6 +28,7 @@ interface
     property ShortFIO:string read GetShortFIO;
     property Modifed:Boolean read FModifed write FModifed;
     property Empty:Boolean read FEmpty write FEmpty;
+    procedure OpenTelegramChat;
     procedure Update;
     procedure Delete;
     procedure GetBack;
@@ -46,6 +47,7 @@ interface
    private
     FDB:TDatabaseCore;
    public
+    function Find(ID:Integer):Integer;
     procedure Load;
     procedure Save;
     procedure GetBack(Index:Integer); overload;
@@ -62,6 +64,7 @@ interface
 
 
 implementation
+ uses ShellAPI;
 
 { TTableCustomers }
 
@@ -123,6 +126,13 @@ begin
   List.EndUpdate;
  end;
  SelID:=s;
+end;
+
+function TTableCustomers.Find(ID: Integer): Integer;
+var i:Integer;
+begin
+ Result:=-1;
+ for i:= 0 to Count-1 do if Items[i].ID = ID then Exit(i);
 end;
 
 procedure TTableCustomers.GetBack(Item: TItemCustomer);
@@ -282,6 +292,11 @@ end;
 function TItemCustomer.GetShortFIO: string;
 begin
  Result:=CreateFIO(F, I, O);
+end;
+
+procedure TItemCustomer.OpenTelegramChat;
+begin
+ ShellExecute(Application.Handle, 'open', PChar('tg://resolve?domain='+Telegram), nil, nil, SW_NORMAL);
 end;
 
 procedure TItemCustomer.Update;
