@@ -43,7 +43,7 @@ interface
     CustomerStr:string;
     property Modifed:Boolean read FModifed write FModifed;
     property Empty:Boolean read FEmpty write FEmpty;
-    function CreateWorkDir(Path:string):Boolean;
+    function CreateWorkDir(Path, WorkDirName:string):Boolean;
     procedure Update;
     procedure GetBack;
     constructor Create(AOwner:TTableTasks);
@@ -358,14 +358,15 @@ begin
  FOwner:=AOwner;
 end;
 
-function TItemTask.CreateWorkDir(Path:string): Boolean;
-var SPath:string;
+function TItemTask.CreateWorkDir(Path, WorkDirName:string): Boolean;
 begin
- SPath:=CreateTaskWorkDir(Path);
- if DirectoryExists(SPath) then
+ Result:=False;
+ WorkPath:=CreateTaskWorkDir(Path);
+ if DirectoryExists(WorkPath) then
   begin
-   CopyFile(PChar(Path+HG_ActualBat), PChar(SPath+HG_ActualBat), False);
-   CopyFile(PChar(Path+HG_Projects), PChar(SPath+HG_Projects), False);
+   Result:=CreateDir(WorkPath+'\'+WorkDirName);
+   CopyFile(PChar(Path+HG_ActualBat), PChar(WorkPath+HG_ActualBat), False);
+   CopyFile(PChar(Path+HG_Projects), PChar(WorkPath+HG_Projects), False);
   end;
 end;
 

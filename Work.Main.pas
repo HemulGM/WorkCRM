@@ -205,17 +205,26 @@ type
     N3: TMenuItem;
     ButtonFlatCustomerTelegram: TButtonFlat;
     ButtonFlatTasksTelegram: TButtonFlat;
-    Panel30: TPanel;
-    Panel31: TPanel;
-    ButtonFlat7: TButtonFlat;
+    PanelCustomerInfo: TPanel;
+    PanelCustInfoHead: TPanel;
+    ButtonFlatHideCustomerInfo: TButtonFlat;
     ImageListOver: TImageList;
     Label18: TLabel;
-    Panel32: TPanel;
+    PanelCustInfoName: TPanel;
     Image1: TImage;
     LabelCustName: TLabel;
-    Panel33: TPanel;
-    Image2: TImage;
+    PanelCustInfoActions: TPanel;
+    ButtonFlat8: TButtonFlat;
+    ButtonFlat9: TButtonFlat;
+    PanelCustInfoContact: TPanel;
+    ButtonFlat7: TButtonFlat;
+    EditCustPhone: TEdit;
     Label19: TLabel;
+    EditCustTelegram: TEdit;
+    Label20: TLabel;
+    ButtonFlatShowCustomerInfo: TButtonFlat;
+    Shape5: TShape;
+    Shape6: TShape;
     procedure FormCreate(Sender: TObject);
     procedure TableExCostomersGetData(FCol, FRow: Integer; var Value: string);
     procedure TimerTimeTimer(Sender: TObject);
@@ -280,6 +289,15 @@ type
     procedure ButtonFlat6Click(Sender: TObject);
     procedure ButtonFlatCustomerTelegramClick(Sender: TObject);
     procedure ButtonFlatTasksTelegramClick(Sender: TObject);
+    procedure ButtonFlat9Click(Sender: TObject);
+    procedure TableExCustomersItemClick(Sender: TObject;
+      MouseButton: TMouseButton; const Index: Integer);
+    procedure ButtonFlatHideCustomerInfoClick(Sender: TObject);
+    procedure ButtonFlatShowCustomerInfoClick(Sender: TObject);
+    procedure ChromiumGKeepJsdialog(Sender: TObject; const browser: ICefBrowser;
+      const originUrl: ustring; dialogType: TCefJsDialogType; const messageText,
+      defaultPromptText: ustring; const callback: ICefJsDialogCallback;
+      out suppressMessage, Result: Boolean);
    private
     FCWJiraClosed:Boolean;
     FCWGKeepClosed:Boolean;
@@ -325,9 +343,13 @@ type
     function EditTask(Item:Integer):Integer; overload;
     function DeleteTask:Integer;
 
-    function ShowInfoOk(Text:string):Boolean;
-    function ShowWrongInfo(Text:string):Boolean;
+    function ShowInfoOk(Text:string; OnlyList:Boolean = False):Boolean;
+    function ShowWrongInfo(Text:string; OnlyList:Boolean = False):Boolean;
+
     function CanIDoSmt:Boolean;
+
+    procedure SetCustomerInfo(Item:TItemCustomer);
+
     procedure UpdateCustomersTable(ItemID:Integer = -1);
     procedure UpdateTasksTable(ItemID:Integer = -1);
     procedure Quit;
@@ -349,9 +371,14 @@ var
   FormMain: TFormMain;
 
 implementation
- uses Math, uCEFApplication;
+ uses Math, uCEFApplication, clipbrd, ShellAPI;
 
 {$R *.dfm}
+
+procedure OpenURL(aURL:string);
+begin
+ ShellExecute(Application.Handle, 'open', PChar(aURL), nil, nil, SW_NORMAL);
+end;
 
 procedure TFormMain.WMEnterMenuLoop(var aMessage: TMessage);
 begin
@@ -388,6 +415,28 @@ procedure TFormMain.CreateParams(var Params:TCreateParams);
 begin
  inherited;
  Params.ExStyle:=Params.ExStyle or WS_EX_COMPOSITED;
+end;
+
+procedure TFormMain.SetCustomerInfo(Item: TItemCustomer);
+var H:Integer;
+begin
+ LabelCustName.Caption:=Item.ShortFIO;
+ EditCustTelegram.Text:=Item.Telegram;
+ EditCustPhone.Text:=Item.Phone;
+ H:=110;
+ if (EditCustTelegram.Text = '') and (EditCustPhone.Text = '') then PanelCustInfoContact.Hide
+ else
+  begin
+   if EditCustTelegram.Text <> '' then H:=60;
+   if EditCustPhone.Text <> '' then H:=110;
+   PanelCustInfoContact.Visible:=True;
+  end;
+ PanelCustInfoContact.Height:=H;
+
+
+ if EditCustTelegram.Text = '' then EditCustTelegram.Text:='Нет';
+ if EditCustPhone.Text = '' then EditCustPhone.Text:='Нет';
+ //60 110
 end;
 
 procedure TFormMain.SetMenuIconColor(Color:TColor);
@@ -457,14 +506,14 @@ begin
  if ButtonFlatTaskDone.Tag = Ord(State) then ButtonFlatTaskDone.ColorNormal:=$00F7D791 else ButtonFlatTaskDone.ColorNormal:=$00F7F6F2;
 end;
 
-function TFormMain.ShowInfoOk(Text: string):Boolean;
+function TFormMain.ShowInfoOk(Text: string; OnlyList:Boolean = False):Boolean;
 var NItem:TNotifyItem;
 begin
  Result:=True;
  NItem.Text:=Text;
  NItem.Kind:=nkOK;
  FNotifyStorage.Insert(0, NItem);
- FNotify.OK('Готово', Text);
+ if not OnlyList then FNotify.OK('Готово', Text);
 end;
 
 procedure TFormMain.OpenPage(Panel: TPanel);
@@ -498,14 +547,14 @@ begin
  Panel.BringToFront;
 end;
 
-function TFormMain.ShowWrongInfo(Text:string):Boolean;
+function TFormMain.ShowWrongInfo(Text:string; OnlyList:Boolean = False):Boolean;
 var NItem:TNotifyItem;
 begin
  Result:=True;
  NItem.Text:=Text;
  NItem.Kind:=nkWarning;
  FNotifyStorage.Insert(0, NItem);
- FNotify.Warning('Ошибка', Text);
+ if not OnlyList then FNotify.Warning('Ошибка', Text);
 end;
 
 function TFormMain.AddCustomer: Integer;
@@ -620,32 +669,29 @@ begin
  FHistory.Insert(0, ItemHist);
  ItemHist.Update;
 
- FAppState.CurTask.Update;
- UpdateTasksTable(FAppState.CurTask.ID);
- ButtonFlatTaskSave.TimedText('Сохранено', 5000);
- ShowInfoOk('Информация о задаче сохранена');
-
  //Auto
  if PanelTaskAuto.Visible then
   begin
    PanelTaskAuto.Hide;
    if CheckBoxTaskAutoCProject.Checked then
     begin
-     FAppState.CurTask.CreateWorkDir(WorkPath);
+     if FAppState.CurTask.CreateWorkDir(WorkPath, WorkDir)
+     then ShowInfoOk('Каталог задачи создан', True)
+     else ShowWrongInfo('Не смог создать каталог задачи', True);
     end;
    if CheckBoxTaskAutoHG.Checked then
     begin
-     if FileExists(WorkPath+HG_ActualBat) then
-      begin
-       WinExec(WorkPath+HG_ActualBat, SW_NORMAL);
-      end;
-    end;
-   if CheckBoxTaskAutoCProject.Checked then
-    begin
-     CreateDir(SPath+'\'+WorkDir);
+     if WinExec(WorkPath+HG_ActualBat, SW_NORMAL) > ERROR_GEN_FAILURE
+     then ShowInfoOk('Запущена выгрузка git default', True)
+     else ShowWrongInfo('Задача выгрузки не запущена', True);
     end;
   end;
+ //
 
+ FAppState.CurTask.Update;
+ UpdateTasksTable(FAppState.CurTask.ID);
+ ButtonFlatTaskSave.TimedText('Сохранено', 5000);
+ ShowInfoOk('Информация о задаче сохранена');
 end;
 
 procedure TFormMain.ButtonFlatCustomersAddClick(Sender: TObject);
@@ -727,6 +773,13 @@ begin
  ChromiumJira.Reload;
 end;
 
+procedure TFormMain.ButtonFlat9Click(Sender: TObject);
+begin
+ if not IndexInList(TableExCustomers.ItemIndex, FCustomers.Count) then Exit;
+ Clipboard.AsText:=FCustomers[TableExCustomers.ItemIndex].FullFIO;
+ OpenURL(urlBorda);
+end;
+
 procedure TFormMain.ButtonFlatAddOtherClick(Sender: TObject);
 var Pt:TPoint;
 begin
@@ -758,6 +811,11 @@ begin
  OpenPage(PanelGoogleKeep);
 end;
 
+procedure TFormMain.ButtonFlatHideCustomerInfoClick(Sender: TObject);
+begin
+ PanelCustomerInfo.Hide;
+end;
+
 procedure TFormMain.ButtonFlatJiraClick(Sender: TObject);
 begin
  OpenPage(PanelJira);
@@ -780,6 +838,21 @@ procedure TFormMain.ButtonFlatLoadTasksClick(Sender: TObject);
 begin
  if not CanIDoSmt then Exit;
  FTasks.Load;
+end;
+
+procedure TFormMain.ButtonFlatShowCustomerInfoClick(Sender: TObject);
+begin
+ if not IndexInList(TableExCustomers.ItemIndex, FCustomers.Count) then
+  begin
+   if FCustomers.Count > 0 then TableExCustomers.ItemIndex:=0;
+  end;
+ if not IndexInList(TableExCustomers.ItemIndex, FCustomers.Count) then
+  begin
+   ShowWrongInfo('Выберите контакт');
+   Exit;
+  end;
+ SetCustomerInfo(FCustomers[TableExCustomers.ItemIndex]);
+ PanelCustomerInfo.Show;
 end;
 
 procedure TFormMain.ButtonFlatTasksAddClick(Sender: TObject);
@@ -847,14 +920,22 @@ begin
  Result:=(targetDisposition in [WOD_NEW_FOREGROUND_TAB, WOD_NEW_BACKGROUND_TAB, WOD_NEW_POPUP, WOD_NEW_WINDOW]);
 end;
 
+procedure TFormMain.ChromiumGKeepJsdialog(Sender: TObject;
+  const browser: ICefBrowser; const originUrl: ustring;
+  dialogType: TCefJsDialogType; const messageText, defaultPromptText: ustring;
+  const callback: ICefJsDialogCallback; out suppressMessage, Result: Boolean);
+begin
+ Result:=False;
+ suppressMessage:=True;
+ ShowMessage(messageText+#13#10+defaultPromptText);
+end;
+
 procedure TFormMain.CreateTables;
 begin
  with TableExCustomers do
   begin
    AddColumn('', 32);
-   AddColumn('Полное имя', 300);
-   AddColumn('Телефон', 100);
-   AddColumn('Телеграм', 100);
+   AddColumn('Полное имя', 400);
    AddColumn('', 10);
   end;
 
@@ -1087,10 +1168,15 @@ begin
  case FCol of
   0:if FCustomers[FRow].Modifed then Value:='*' else Value:='';
   1:Value:=FCustomers[FRow].FullFIO;
-  2:Value:=FCustomers[FRow].Phone;
-  3:Value:=FCustomers[FRow].Telegram;
  else Value:='';
  end;
+end;
+
+procedure TFormMain.TableExCustomersItemClick(Sender: TObject;
+  MouseButton: TMouseButton; const Index: Integer);
+begin
+ if not IndexInList(Index, FCustomers.Count) then Exit;
+ SetCustomerInfo(FCustomers[Index]);
 end;
 
 procedure TFormMain.TableExCustomerTasksGetData(FCol, FRow: Integer; var Value: string);
@@ -1362,6 +1448,13 @@ end;
 procedure TFormMain.UpdateCustomersTable;
 var SelIt:Integer;
 begin
+ if PanelCustomerInfo.Visible then
+  if not IndexInList(TableExCustomers.ItemIndex, FCustomers.Count) then
+   begin
+    PanelCustomerInfo.Hide;
+   end
+  else SetCustomerInfo(FCustomers[TableExCustomers.ItemIndex]);
+
  //Если открыта панель задач, то подставляем туда нашу изменённую запись
  if PanelTask.Visible then
   begin

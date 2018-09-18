@@ -791,6 +791,7 @@ object FormMain: TFormMain
       ColumnsFont.Name = 'Tahoma'
       ColumnsFont.Style = []
       DrawColumnBorded = False
+      DrawColumnSections = False
       ColWidths = (
         60)
       RowHeights = (
@@ -1216,6 +1217,7 @@ object FormMain: TFormMain
               ColumnsFont.Height = -11
               ColumnsFont.Name = 'Tahoma'
               ColumnsFont.Style = []
+              DrawColumnSections = False
               ColWidths = (
                 60)
               RowHeights = (
@@ -1591,6 +1593,7 @@ object FormMain: TFormMain
               ColumnsFont.Name = 'Tahoma'
               ColumnsFont.Style = []
               SetFocusOnEnter = True
+              DrawColumnSections = False
               FlashSelectedCol = True
               ColWidths = (
                 60)
@@ -1765,6 +1768,7 @@ object FormMain: TFormMain
             ColumnsFont.Name = 'Tahoma'
             ColumnsFont.Style = []
             SetFocusOnEnter = True
+            DrawColumnSections = False
             ColWidths = (
               60)
             RowHeights = (
@@ -2634,347 +2638,6 @@ object FormMain: TFormMain
         end
       end
     end
-    object PanelTableTasks: TPanel
-      Left = 0
-      Top = 0
-      Width = 983
-      Height = 680
-      Align = alClient
-      BevelOuter = bvNone
-      TabOrder = 1
-      Visible = False
-      object Panel8: TPanel
-        Left = 0
-        Top = 0
-        Width = 983
-        Height = 82
-        Align = alTop
-        BevelOuter = bvNone
-        TabOrder = 0
-        object Label4: TLabel
-          AlignWithMargins = True
-          Left = 15
-          Top = 3
-          Width = 933
-          Height = 76
-          Margins.Left = 15
-          Margins.Right = 35
-          Align = alClient
-          AutoSize = False
-          Caption = #1047#1072#1076#1072#1095#1080
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 6250335
-          Font.Height = -33
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          Layout = tlCenter
-          ExplicitWidth = 930
-        end
-      end
-      object Panel9: TPanel
-        AlignWithMargins = True
-        Left = 0
-        Top = 82
-        Width = 963
-        Height = 598
-        Margins.Left = 0
-        Margins.Top = 0
-        Margins.Right = 20
-        Margins.Bottom = 0
-        Align = alClient
-        BevelOuter = bvNone
-        Color = 15724009
-        Padding.Left = 1
-        Padding.Top = 1
-        Padding.Right = 1
-        ParentBackground = False
-        TabOrder = 1
-        object Panel10: TPanel
-          Left = 1
-          Top = 1
-          Width = 961
-          Height = 597
-          Align = alClient
-          BevelOuter = bvNone
-          Color = clWhite
-          ParentBackground = False
-          TabOrder = 0
-          object TableExTasks: TTableEx
-            AlignWithMargins = True
-            Left = 5
-            Top = 45
-            Width = 951
-            Height = 552
-            Margins.Left = 5
-            Margins.Top = 5
-            Margins.Right = 5
-            Margins.Bottom = 0
-            Align = alClient
-            BorderStyle = bsNone
-            Color = clWhite
-            DefaultRowHeight = 64
-            TabOrder = 0
-            OnDrawCellData = TableExTasksDrawCellData
-            ItemIndex = -1
-            GetData = TableExTasksGetData
-            CanNoSelect = False
-            ItemCount = 1
-            LineColor = clWhite
-            LineColorXor = clWhite
-            LineHotColor = 16250610
-            LineSelColor = 14803425
-            ColumnsColor = 15329769
-            FontHotLine.Charset = DEFAULT_CHARSET
-            FontHotLine.Color = 2631720
-            FontHotLine.Height = -13
-            FontHotLine.Name = 'Tahoma'
-            FontHotLine.Style = []
-            FontLine.Charset = DEFAULT_CHARSET
-            FontLine.Color = 2631720
-            FontLine.Height = -13
-            FontLine.Name = 'Tahoma'
-            FontLine.Style = []
-            FontSelLine.Charset = DEFAULT_CHARSET
-            FontSelLine.Color = 2631720
-            FontSelLine.Height = -13
-            FontSelLine.Name = 'Tahoma'
-            FontSelLine.Style = []
-            ColumnsFont.Charset = DEFAULT_CHARSET
-            ColumnsFont.Color = 2631720
-            ColumnsFont.Height = -11
-            ColumnsFont.Name = 'Tahoma'
-            ColumnsFont.Style = []
-            ColWidths = (
-              60)
-            RowHeights = (
-              30
-              64)
-          end
-          object Panel11: TPanel
-            Left = 0
-            Top = 0
-            Width = 961
-            Height = 40
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            ParentBackground = False
-            TabOrder = 1
-            object ButtonFlatTasksAdd: TButtonFlat
-              AlignWithMargins = True
-              Left = 5
-              Top = 5
-              Width = 120
-              Height = 30
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 0
-              Margins.Bottom = 5
-              Align = alLeft
-              Caption = #1044#1086#1073#1072#1074#1080#1090#1100
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -13
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = 6250335
-              FontOver.Height = -13
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = 6250335
-              FontDown.Height = -13
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 0
-              Images = ImageListSmall
-              OnClick = ButtonFlatTasksAddClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 0
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-            object ButtonFlatTasksDelete: TButtonFlat
-              AlignWithMargins = True
-              Left = 255
-              Top = 5
-              Width = 120
-              Height = 30
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 0
-              Margins.Bottom = 5
-              Align = alLeft
-              Caption = #1059#1076#1072#1083#1080#1090#1100
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -13
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = 6250335
-              FontOver.Height = -13
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = 6250335
-              FontDown.Height = -13
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 4
-              Images = ImageListSmall
-              OnClick = ButtonFlatTasksDeleteClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 1
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-            object ButtonFlatTasksEdit: TButtonFlat
-              AlignWithMargins = True
-              Left = 130
-              Top = 5
-              Width = 120
-              Height = 30
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 0
-              Margins.Bottom = 5
-              Align = alLeft
-              Caption = #1048#1079#1084#1077#1085#1080#1090#1100
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -13
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = 6250335
-              FontOver.Height = -13
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = 6250335
-              FontDown.Height = -13
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 12
-              Images = ImageListSmall
-              OnClick = ButtonFlatTasksEditClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 2
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-            object ButtonFlatLoadTasks: TButtonFlat
-              AlignWithMargins = True
-              Left = 915
-              Top = 5
-              Width = 41
-              Height = 30
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 5
-              Margins.Bottom = 5
-              Align = alRight
-              Caption = ''
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -13
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = clWhite
-              FontOver.Height = -13
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = clWhite
-              FontDown.Height = -13
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 13
-              Images = ImageListSmall
-              OnClick = ButtonFlatLoadTasksClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 3
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-            object ButtonFlatTasksTelegram: TButtonFlat
-              AlignWithMargins = True
-              Left = 380
-              Top = 5
-              Width = 185
-              Height = 30
-              Margins.Left = 5
-              Margins.Top = 5
-              Margins.Right = 0
-              Margins.Bottom = 5
-              Align = alLeft
-              Caption = #1053#1072#1087#1080#1089#1072#1090#1100' '#1074' Telegram'
-              ColorNormal = 16250610
-              ColorOver = 16514041
-              ColorPressed = 15789800
-              Flat = False
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = 6250335
-              Font.Height = -13
-              Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
-              FontOver.Charset = DEFAULT_CHARSET
-              FontOver.Color = 6250335
-              FontOver.Height = -13
-              FontOver.Name = 'Segoe UI'
-              FontOver.Style = [fsBold]
-              FontDown.Charset = DEFAULT_CHARSET
-              FontDown.Color = 6250335
-              FontDown.Height = -13
-              FontDown.Name = 'Segoe UI'
-              FontDown.Style = [fsBold]
-              IgnorBounds = True
-              ImageIndentLeft = 8
-              ImageIndex = 23
-              Images = ImageListSmall
-              OnClick = ButtonFlatTasksTelegramClick
-              RoundRectParam = 8
-              Shape = stRoundRect
-              TabOrder = 4
-              TabStop = True
-              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
-            end
-          end
-        end
-      end
-    end
     object PanelTableCustomers: TPanel
       Left = 0
       Top = 0
@@ -3042,11 +2705,10 @@ object FormMain: TFormMain
           ParentBackground = False
           TabOrder = 0
           object TableExCustomers: TTableEx
-            AlignWithMargins = True
-            Left = 5
-            Top = 45
-            Width = 698
-            Height = 552
+            Left = 0
+            Top = 40
+            Width = 708
+            Height = 557
             Margins.Left = 5
             Margins.Top = 5
             Margins.Right = 5
@@ -3056,7 +2718,8 @@ object FormMain: TFormMain
             Color = clWhite
             DefaultRowHeight = 30
             TabOrder = 0
-            ItemIndex = -1
+            ItemIndex = 0
+            OnItemClick = TableExCustomersItemClick
             GetData = TableExCostomersGetData
             CanNoSelect = False
             ItemCount = 1
@@ -3080,16 +2743,18 @@ object FormMain: TFormMain
             FontSelLine.Height = -13
             FontSelLine.Name = 'Segoe UI'
             FontSelLine.Style = []
+            ShowColumns = False
             ColumnsFont.Charset = DEFAULT_CHARSET
             ColumnsFont.Color = 2631720
-            ColumnsFont.Height = -11
-            ColumnsFont.Name = 'Tahoma'
+            ColumnsFont.Height = -13
+            ColumnsFont.Name = 'Segoe UI'
             ColumnsFont.Style = []
             ShowFocus = True
+            DrawColumnBorded = False
+            DrawColumnSections = False
             ColWidths = (
-              60)
+              420)
             RowHeights = (
-              30
               30)
           end
           object Panel6: TPanel
@@ -3098,16 +2763,27 @@ object FormMain: TFormMain
             Width = 708
             Height = 40
             Align = alTop
+            BevelEdges = [beBottom]
             BevelOuter = bvNone
             Color = clWhite
             ParentBackground = False
             TabOrder = 1
+            object Shape5: TShape
+              Left = 0
+              Top = 39
+              Width = 708
+              Height = 1
+              Align = alBottom
+              Brush.Color = 16316664
+              Pen.Color = 16316664
+              ExplicitTop = 38
+            end
             object ButtonFlatCustomersAdd: TButtonFlat
               AlignWithMargins = True
               Left = 5
               Top = 5
               Width = 120
-              Height = 30
+              Height = 29
               Margins.Left = 5
               Margins.Top = 5
               Margins.Right = 0
@@ -3117,7 +2793,6 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
@@ -3137,9 +2812,10 @@ object FormMain: TFormMain
               ImageIndentLeft = 8
               ImageIndex = 0
               Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
               OnClick = ButtonFlatCustomersAddClick
               RoundRectParam = 8
-              Shape = stRoundRect
               TabOrder = 0
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
@@ -3149,7 +2825,7 @@ object FormMain: TFormMain
               Left = 130
               Top = 5
               Width = 120
-              Height = 30
+              Height = 29
               Margins.Left = 5
               Margins.Top = 5
               Margins.Right = 0
@@ -3159,7 +2835,6 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
@@ -3179,9 +2854,10 @@ object FormMain: TFormMain
               ImageIndentLeft = 8
               ImageIndex = 12
               Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
               OnClick = ButtonFlatCustomersEditClick
               RoundRectParam = 8
-              Shape = stRoundRect
               TabOrder = 1
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
@@ -3191,7 +2867,7 @@ object FormMain: TFormMain
               Left = 255
               Top = 5
               Width = 120
-              Height = 30
+              Height = 29
               Margins.Left = 5
               Margins.Top = 5
               Margins.Right = 0
@@ -3201,7 +2877,6 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
@@ -3221,9 +2896,10 @@ object FormMain: TFormMain
               ImageIndentLeft = 8
               ImageIndex = 4
               Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
               OnClick = ButtonFlatCustomersDelClick
               RoundRectParam = 8
-              Shape = stRoundRect
               TabOrder = 2
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
@@ -3233,7 +2909,7 @@ object FormMain: TFormMain
               Left = 673
               Top = 5
               Width = 30
-              Height = 30
+              Height = 29
               Margins.Left = 5
               Margins.Top = 5
               Margins.Right = 5
@@ -3243,7 +2919,6 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
@@ -3262,9 +2937,10 @@ object FormMain: TFormMain
               IgnorBounds = True
               ImageIndex = 13
               Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
               OnClick = ButtonFlatCustomersLoadClick
               RoundRectParam = 8
-              Shape = stRoundRect
               TabOrder = 3
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
@@ -3273,18 +2949,17 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 380
               Top = 5
-              Width = 31
-              Height = 30
+              Width = 120
+              Height = 29
               Margins.Left = 5
               Margins.Top = 5
               Margins.Right = 0
               Margins.Bottom = 5
               Align = alLeft
-              Caption = ''
+              Caption = #1053#1072#1087#1080#1089#1072#1090#1100
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
@@ -3304,40 +2979,85 @@ object FormMain: TFormMain
               ImageIndentLeft = 5
               ImageIndex = 23
               Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
               OnClick = ButtonFlatCustomerTelegramClick
               RoundRectParam = 8
-              Shape = stRoundRect
               TabOrder = 4
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object ButtonFlatShowCustomerInfo: TButtonFlat
+              AlignWithMargins = True
+              Left = 505
+              Top = 5
+              Width = 30
+              Height = 29
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = ''
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -13
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -13
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndex = 25
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatShowCustomerInfoClick
+              RoundRectParam = 8
+              TabOrder = 5
               TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
             end
           end
         end
-        object Panel30: TPanel
+        object PanelCustomerInfo: TPanel
           Left = 709
           Top = 1
           Width = 253
           Height = 597
           Align = alRight
           BevelOuter = bvNone
-          Color = 16316664
+          Color = clWhite
           ParentBackground = False
           TabOrder = 1
-          object Panel31: TPanel
+          Visible = False
+          object PanelCustInfoHead: TPanel
             Left = 0
             Top = 0
             Width = 253
             Height = 40
             Align = alTop
             BevelOuter = bvNone
+            Color = clWhite
             ParentBackground = False
             TabOrder = 0
             object Label18: TLabel
               AlignWithMargins = True
-              Left = 3
+              Left = 10
               Top = 3
-              Width = 207
+              Width = 200
               Height = 34
+              Margins.Left = 10
               Align = alClient
               Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103
               Font.Charset = DEFAULT_CHARSET
@@ -3350,7 +3070,7 @@ object FormMain: TFormMain
               ExplicitWidth = 105
               ExplicitHeight = 23
             end
-            object ButtonFlat7: TButtonFlat
+            object ButtonFlatHideCustomerInfo: TButtonFlat
               Left = 213
               Top = 0
               Width = 40
@@ -3380,6 +3100,8 @@ object FormMain: TFormMain
               ImageIndex = 5
               Images = ImageListSmall
               ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatHideCustomerInfoClick
               RoundRectParam = 0
               Shape = stCircle
               TabOrder = 0
@@ -3387,18 +3109,19 @@ object FormMain: TFormMain
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
             end
           end
-          object Panel32: TPanel
+          object PanelCustInfoName: TPanel
             AlignWithMargins = True
             Left = 0
             Top = 40
-            Width = 253
+            Width = 252
             Height = 82
             Margins.Left = 0
             Margins.Top = 0
-            Margins.Right = 0
+            Margins.Right = 1
             Margins.Bottom = 10
             Align = alTop
             BevelOuter = bvNone
+            Color = 16316664
             ParentBackground = False
             TabOrder = 1
             object Image1: TImage
@@ -4214,8 +3937,8 @@ object FormMain: TFormMain
                 000000000000}
             end
             object LabelCustName: TLabel
-              Left = 86
-              Top = 6
+              Left = 79
+              Top = 23
               Width = 155
               Height = 17
               AutoSize = False
@@ -4228,847 +3951,563 @@ object FormMain: TFormMain
               ParentFont = False
             end
           end
-          object Panel33: TPanel
+          object PanelCustInfoActions: TPanel
             AlignWithMargins = True
             Left = 0
-            Top = 132
-            Width = 253
+            Top = 252
+            Width = 252
             Height = 82
             Margins.Left = 0
             Margins.Top = 0
-            Margins.Right = 0
+            Margins.Right = 1
             Margins.Bottom = 10
             Align = alTop
             BevelOuter = bvNone
+            Color = 16316664
             ParentBackground = False
             TabOrder = 2
-            ExplicitLeft = 3
-            ExplicitTop = 280
-            object Image2: TImage
+            object ButtonFlat8: TButtonFlat
               Left = 0
               Top = 0
-              Width = 73
-              Height = 82
-              Align = alLeft
-              Center = True
-              Picture.Data = {
-                0B54504E474772617068696336640000424D3664000000000000360000002800
-                0000500000005000000001002000000000000064000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000424242014444440F4444442A4444443D4444444044444440444444404444
-                4440444444404444444044444440444444404444444044444440444444404444
-                443F444444304545451542424203000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004545
-                452F4444447F444444B6444444DE444444FB444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FE444444E7444444BF444444954545453E4444440600000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000424242014343432144444473444444C94444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444DF44444488434343334444
-                4404000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000494949014545452045454577444444D5444444FB444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FE444444E04444
-                449B454545294545450500000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00004141410B4444445D444444DC444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444E5444444C7444444A84444
-                44954444448B444444824444448844444492444444A2444444BD444444E04444
-                44FA444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444EA4444448443434316000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000454545024444
-                4431444444B5444444F5444444FF444444FF444444FF444444FF444444FF4444
-                44FD444444E6444444BB4545457C4444443D44444419444444124545450A4545
-                450545454503555555014646460246464605454545094444440F434343184343
-                432F4444446C444444AE444444DB444444FC444444FF444444FF444444FF4444
-                44FF444444FF444444FA444444D04444444D4646460700000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000000000000555555014444444F4444
-                44DB444444FE444444FF444444FF444444FF444444FF444444FF444444E64444
-                447B4343433A4646460A00000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000046464605444444294444446D444444CA444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444EB4444447D55555502000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000000000000424242084444448F444444F64444
-                44FF444444FF444444FF444444FF444444FD444444CF444444664343430D0000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000000000000424242054444444B444444B84444
-                44F7444444FF444444FF444444FF444444FF444444FF444444AE444444200000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000434343144444448C444444FA444444FF4444
-                44FF444444FF444444FF444444E94444448C4646462045454502000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000464646154545
-                4563444444E2444444FD444444FF444444FF444444FF444444FC444444B94444
-                4423454545010000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004242420D444444A1444444FD444444FF444444FF4444
-                44FF444444FE444444D04444443A404040030000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000044444427444444A7444444FD444444FF444444FF444444FF444444FE4444
-                44C9444444230000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000004343430D44444492444444F9444444FF444444FF444444FF4444
-                44F94444449C4545452000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000004444441044444477444444ED444444FF444444FF444444FF4444
-                44FE444444B94444442000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00005555550144444473444444F8444444FF444444FF444444FF444444FA4444
-                4495444444100000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000464646044343436B444444EF444444FF444444FF4444
-                44FF444444FC444444AE55555502000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000045454557444444ED444444FF444444FF444444FF444444F6444444805555
-                5502000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004949490144444448444444F0444444FF4444
-                44FF444444FF444444FF4444447D464646070000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004343
-                431B444444DD444444FF444444FF444444FF444444FC4444448E4242420F0000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000000000000494949014444446B444444ED4444
-                44FF444444FF444444FF444444EB4444444D0000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000000000000000000004242420B4444
-                449B444444FF444444FF444444FF444444FE444444B346464607000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000046464604444444774444
-                44FD444444FF444444FF444444FF444444D04343431600000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000444444534444
-                44F1444444FF444444FF444444FF444444CB4444442900000000000000000000
-                0000000000004444441844444431444444314444443144444431444444314444
-                4431444444314444443144444431444444314444443144444431444444314444
-                4431444444314444443144444431444444314444443144444431444444314444
-                4431444444314444443144444431444444314444443144444431444444314444
-                44314444442D4444440900000000000000000000000000000000444444104444
-                44A7444444FD444444FF444444FF444444FA4444448445454505000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000000000000000000004545450C444444C74444
-                44FF444444FF444444FF444444F94444444F0000000000000000000000000000
-                00000000000044444470444444E9444444E9444444E9444444E9444444E94444
-                44E9444444E9444444E9444444E9444444E9444444E9444444E9444444E94444
-                44E9444444E9444444E9444444E9444444E9444444E9444444E9444444E94444
-                44E9444444E9444444E9444444E9444444E9444444E9444444E9444444E94444
-                44E9444444D54444442D00000000000000000000000000000000000000004444
-                4427444444E2444444FF444444FF444444FF444444EA45454529000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004242420144444466444444F74444
-                44FF444444FF444444FD44444496444444080000000000000000000000000000
-                0000000000004444447B444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444E94444443100000000000000000000000000000000000000000000
-                000045454563444444F7444444FF444444FF444444FF4444449B444444040000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000044444412444444C1444444FF4444
-                44FF444444FF444444E44545452A000000000000000000000000000000000000
-                0000000000004444447B444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444E94444443100000000000000000000000000000000000000000000
-                000046464615444444B8444444FF444444FF444444FF444444E0434343330000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000045454549444444FD444444FF4444
-                44FF444444FF4444448A00000000000000000000000000000000000000000000
-                0000000000004444447A444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444E94444443100000000000000000000000000000000000000000000
-                0000000000004444444B444444FF444444FF444444FF444444FE444444880000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000043434304444444A3444444FF444444FF4444
-                44FF444444DF4343432F00000000000000000000000000000000000000000000
-                00000000000044444465444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444DC4444442800000000000000000000000000000000000000000000
-                00000000000042424205444444C9444444FF444444FF444444FF444444DF4444
-                4406000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000044444425444444D8444444FF444444FF4444
-                44FF444444A24646460700000000000000000000000000000000000000000000
-                00000000000043434327444444FD444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444B44545450F00000000000000000000000000000000000000000000
-                000000000000000000004444446D444444FC444444FF444444FF444444FF4545
-                453E000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004444445D444444F9444444FF444444FF4444
-                44FF444444440000000000000000000000000000000000000000000000000000
-                000000000000000000004444448A444444F8444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44EE444444350000000000000000000000000000000000000000000000000000
-                0000000000000000000044444429444444DB444444FF444444FF444444FF4444
-                4495424242030000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000044444495444444FF444444FF444444FF4444
-                44EA424242080000000000000000000000000000000000000000000000000000
-                000000000000000000004545451244444488444444F4444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FE444444D84545
-                4557404040010000000000000000000000000000000000000000000000000000
-                0000000000000000000046464605444444AE444444FF444444FF444444FF4444
-                44BF454545150000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000444444D8444444FF444444FF444444FF4444
-                44AB000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004545450544444457444444C6444444FC4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444F3444444A14343432C0000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004545456C444444FF444444FF444444FF4444
-                44E7444444300000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000042424211444444FD444444FF444444FF444444FD4444
-                446B000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004747470144444414434343544444
-                44BB444444E3444444FD444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444F6444444D8444444964343433643434309000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004444442E444444FA444444FF444444FF4444
-                44FE4444443F0000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444433444444FF444444FF444444FF444444EF4444
-                4448000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004747
-                47094343433644444474444444BB444444F3444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44E2444444A14444445B44444425000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000043434318444444E0444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004444445D444444FF444444FF444444FF444444DE4444
-                442E000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000474747074545453A45454561444444894444
-                449F444444A7444444AA444444A44444449A4545457A44444454464646224747
-                4703000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004444440F444444BD444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000045454578444444FF444444FF444444FF444444D14545
-                451A000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000003939
-                3901414141054444440743434303000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000045454509444444A2444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444488444444FF444444FF444444FF444444C94444
-                440E000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004646460544444492444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444495444444FF444444FF444444FF444444C44747
-                4706000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004646460244444488444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004444449C444444FF444444FF444444FF444444C15555
-                5502000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004343
-                43194444443B45454548444444324242420A0000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000005555550144444482444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444491444444FF444444FF444444FF444444C54444
-                4409000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004444440C44444456444444C54444
-                44FB444444FF444444FF444444FF444444F14444449D44444436000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000454545034444448B444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444484444444FF444444FF444444FF444444CA4545
-                4510000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004747470D44444499444444F0444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FD444444E2444444514747
-                4705000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004545450544444495444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000045454574444444FF444444FF444444FF444444D44444
-                441E000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004444440F44444498444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444ED4343
-                4359000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004545450A444444A8444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444451444444FF444444FF444444FF444444E34444
-                4435000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004444446C444444F9444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44DE434343270000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000044444412444444C7444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004343432D444444FF444444FF444444FF444444F24444
-                444C000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000041414111444444D3444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FC444444844242420400000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000044444419444444E5444444FF444444FF4444
-                44FF444444400000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000043434307444444F8444444FF444444FF444444FF4444
-                447D000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000004444444F444444F3444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444CF4444441400000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004444443D444444FF444444FF444444FF4444
-                44FB4444443D0000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000444444C8444444FF444444FF444444FF4444
-                44BB000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000044444473444444FC444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444F24444441D00000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004545457C444444FF444444FF444444FF4444
-                44DE4444442A0000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000044444485444444FF444444FF444444FF4444
-                44F4424242100000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00004040400144444482444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF4444442400000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004646460A444444BB444444FF444444FF444444FF4444
-                44B64444440F0000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004444444D444444F2444444FF444444FF4444
-                44FF444444610000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000044444475444444FC444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444F44444441E00000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004343433A444444E6444444FF444444FF444444FF4444
-                447F424242010000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004444441D444444D2444444FF444444FF4444
-                44FF444444AC4545450C00000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000045454553444444F4444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444D24343431500000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004444447B444444FD444444FF444444FF444444FF4545
-                452F000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000044444489444444FF444444FF4444
-                44FF444444F04444444300000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000044444415444444D8444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FD4444448B4545450500000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000004343430D444444E6444444FF444444FF444444FF444444C90000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000045454537444444F6444444FF4444
-                44FF444444FF444444A445454503000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444478444444FA444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44E34444442F0000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00004545450244444466444444FF444444FF444444FF444444FB444444730000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004444440B444444AB444444FF4444
-                44FF444444FF444444EF45454540000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000044444414444444AA444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444F34444
-                446A000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000046464620444444CF444444FF444444FF444444FF444444D5434343210000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000044444447444444F04444
-                44FF444444FF444444FE444444BA434343130000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000000000000044444415444444B1444444F8444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444ED444444694444
-                4409000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004949
-                49034444448D444444FD444444FF444444FF444444FF45454577444444010000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000045454507444444B44444
-                44FF444444FF444444FF444444FC444444680000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004545451544444473444444E74444
-                44FF444444FF444444FF444444FF444444FF444444C14545454F404040010000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004444
-                443A444444E9444444FF444444FF444444FF444444DC45454520000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000444444314444
-                44E2444444FF444444FF444444FF444444E74444444800000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000464646074444
-                443F44444466444444724343435C444444254646460200000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000454545204444
-                44D0444444FF444444FF444444FF444444F54444445D49494901000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000414141054444
-                447B444444FE444444FF444444FF444444FF444444D145454519000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000000000000444444104444449C4444
-                44FE444444FF444444FF444444FE444444B54242420B00000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004242
-                420A444444C2444444FF444444FF444444FF444444FF444444B64545451B0000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004949490243434395444444F94444
-                44FF444444FF444444FF444444DB444444310000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000045454533444444D5444444FF444444FF444444FF444444FC444444B14545
-                451B000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000004242420F44444480444444FA444444FF4444
-                44FF444444FF444444F64444444F464646020000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00005555550144444455444444F4444444FF444444FF444444FF444444FC4444
-                44B6454545190000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000464646074444448E444444F6444444FF444444FF4444
-                44FF444444FA4444448F55555501000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000424242034444445D444444F1444444FF444444FF444444FF4444
-                44FF444444D14444444800000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000044444429444444B3444444FC444444FF444444FF444444FF4444
-                44FD4444448B4444440800000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004242420644444478444444F1444444FF444444FF4444
-                44FF444444FF444444E744444468434343120000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004444
-                44084343434F444444CB444444FE444444FF444444FF444444FF444444F94444
-                44A0444444140000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000424242064444445D444444F4444444FF4444
-                44FF444444FF444444FF444444FC444444BA4444444045454503000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00000000000000000000000000000000000000000000000000004545452A4444
-                4496444444F9444444FF444444FF444444FF444444FF444444F8444444924444
-                440C000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004242420344444455444444D54444
-                44FF444444FF444444FF444444FF444444FE444444EF444444A4444444434545
-                450C000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000454545084444442F4444448A444444E44444
-                44FD444444FF444444FF444444FF444444FF444444ED444444724444440D0000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000055555501454545334444
-                44C2444444FE444444FF444444FF444444FF444444FF444444FF444444F04444
-                44AC444444614242421000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000004242420844444444444444A2444444DF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444DD4545455755555501000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004242
-                420A4444447C444444E2444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444F4444444BB4444447D4444444C444444354444441E4545
-                45104444440955555502474747064444440E4545451A4444442E444444484444
-                446C444444AC444444EA444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444F14444449B4343431B0000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                00004141410644444431444444B4444444F0444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444F2444444E3444444D44444
-                44CA444444C5444444C1444444C4444444C9444444D1444444DE444444EF4444
-                44FD444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44F7444444C7444444534242420B000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000000000004545450744444447444444AB444444F6444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FD444444C14444
-                44664545450C0000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000004444440B45454537444444894444
-                44D2444444F2444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444F9444444D8444444A345454549444444124242
-                4201000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000004444
-                441D4444444D44444485444444C8444444F8444444FF444444FF444444FF4444
-                44FF444444FF444444FF444444FF444444FF444444FF444444FF444444FF4444
-                44FD444444D8444444954444445D444444254343430400000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000434343074343432D44444451454545744444
-                4484444444914444449C4444449544444488454545784444445D444444334242
-                4211000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                0000000000000000000000000000000000000000000000000000000000000000
-                000000000000}
+              Width = 252
+              Height = 40
+              Align = alTop
+              Caption = #1053#1072#1087#1080#1089#1072#1090#1100' '#1074' Telegram'
+              ColorNormal = 16316664
+              ColorOver = 15329769
+              ColorPressed = 13948116
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 3223857
+              Font.Height = -16
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 3223857
+              FontOver.Height = -16
+              FontOver.Name = 'Tahoma'
+              FontOver.Style = []
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 3223857
+              FontDown.Height = -16
+              FontDown.Name = 'Tahoma'
+              FontDown.Style = []
+              IgnorBounds = True
+              ImageIndentLeft = 10
+              ImageIndentRight = 10
+              ImageIndex = 23
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              OnClick = ButtonFlatCustomerTelegramClick
+              RoundRectParam = 0
+              TabOrder = 0
+              TabStop = True
+              TextFormat = [tfSingleLine, tfVerticalCenter]
             end
+            object ButtonFlat9: TButtonFlat
+              Left = 0
+              Top = 40
+              Width = 252
+              Height = 40
+              Align = alTop
+              Caption = #1041#1086#1088#1076#1072
+              ColorNormal = 16316664
+              ColorOver = 15329769
+              ColorPressed = 13948116
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 3223857
+              Font.Height = -16
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 3223857
+              FontOver.Height = -16
+              FontOver.Name = 'Tahoma'
+              FontOver.Style = []
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 3223857
+              FontDown.Height = -16
+              FontDown.Name = 'Tahoma'
+              FontDown.Style = []
+              IgnorBounds = True
+              ImageIndentLeft = 10
+              ImageIndentRight = 10
+              ImageIndex = 24
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              OnClick = ButtonFlat9Click
+              RoundRectParam = 0
+              TabOrder = 1
+              TabStop = True
+              TextFormat = [tfSingleLine, tfVerticalCenter]
+            end
+          end
+          object PanelCustInfoContact: TPanel
+            AlignWithMargins = True
+            Left = 0
+            Top = 132
+            Width = 252
+            Height = 110
+            Margins.Left = 0
+            Margins.Top = 0
+            Margins.Right = 1
+            Margins.Bottom = 10
+            Align = alTop
+            BevelOuter = bvNone
+            Color = 16316664
+            ParentBackground = False
+            TabOrder = 3
             object Label19: TLabel
-              Left = 86
-              Top = 6
+              Left = 64
+              Top = 84
               Width = 155
               Height = 17
               AutoSize = False
-              Caption = #1040#1085#1090#1086#1085' '#1041#1086#1088#1080#1089#1086#1074
+              Caption = #1058#1077#1083#1077#1092#1086#1085
               Font.Charset = DEFAULT_CHARSET
-              Font.Color = 3618615
+              Font.Color = 10329501
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label20: TLabel
+              Left = 64
+              Top = 36
+              Width = 155
+              Height = 17
+              AutoSize = False
+              Caption = 'Telegram'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 10329501
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object ButtonFlat7: TButtonFlat
+              Left = 8
+              Top = 8
+              Width = 33
+              Height = 30
+              Caption = ''
+              ColorNormal = clBtnFace
+              ColorOver = 15329769
+              ColorPressed = 13948116
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWhite
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = clWhite
+              FontOver.Height = -13
+              FontOver.Name = 'Tahoma'
+              FontOver.Style = []
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = clWhite
+              FontDown.Height = -13
+              FontDown.Name = 'Tahoma'
+              FontDown.Style = []
+              IgnorBounds = True
+              ImageIndex = 25
+              Images = ImageListSmall
+              Transparent = True
+              RoundRectParam = 0
+              TabOrder = 0
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object EditCustPhone: TEdit
+              Left = 64
+              Top = 59
+              Width = 169
+              Height = 25
+              BorderStyle = bsNone
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
               Font.Height = -15
               Font.Name = 'Segoe UI'
-              Font.Style = [fsBold]
+              Font.Style = []
+              ParentColor = True
               ParentFont = False
+              ReadOnly = True
+              TabOrder = 1
+              TextHint = '+7 953 002 13 68'
+            end
+            object EditCustTelegram: TEdit
+              Left = 64
+              Top = 11
+              Width = 169
+              Height = 25
+              BorderStyle = bsNone
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentColor = True
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 2
+              TextHint = '+7 953 002 13 68'
+            end
+          end
+        end
+      end
+    end
+    object PanelTableTasks: TPanel
+      Left = 0
+      Top = 0
+      Width = 983
+      Height = 680
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 1
+      Visible = False
+      object Panel8: TPanel
+        Left = 0
+        Top = 0
+        Width = 983
+        Height = 82
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label4: TLabel
+          AlignWithMargins = True
+          Left = 15
+          Top = 3
+          Width = 933
+          Height = 76
+          Margins.Left = 15
+          Margins.Right = 35
+          Align = alClient
+          AutoSize = False
+          Caption = #1047#1072#1076#1072#1095#1080
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 6250335
+          Font.Height = -33
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          Layout = tlCenter
+          ExplicitWidth = 930
+        end
+      end
+      object Panel9: TPanel
+        AlignWithMargins = True
+        Left = 0
+        Top = 82
+        Width = 963
+        Height = 598
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 20
+        Margins.Bottom = 0
+        Align = alClient
+        BevelOuter = bvNone
+        Color = 15724009
+        Padding.Left = 1
+        Padding.Top = 1
+        Padding.Right = 1
+        ParentBackground = False
+        TabOrder = 1
+        object Panel10: TPanel
+          Left = 1
+          Top = 1
+          Width = 961
+          Height = 597
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clWhite
+          ParentBackground = False
+          TabOrder = 0
+          object TableExTasks: TTableEx
+            Left = 0
+            Top = 40
+            Width = 961
+            Height = 557
+            Margins.Left = 5
+            Margins.Top = 5
+            Margins.Right = 5
+            Margins.Bottom = 0
+            Align = alClient
+            BorderStyle = bsNone
+            Color = clWhite
+            DefaultRowHeight = 64
+            TabOrder = 0
+            OnDrawCellData = TableExTasksDrawCellData
+            ItemIndex = -1
+            GetData = TableExTasksGetData
+            CanNoSelect = False
+            ItemCount = 1
+            LineColor = clWhite
+            LineColorXor = clWhite
+            LineHotColor = 16250610
+            LineSelColor = 14803425
+            ColumnsColor = 15329769
+            FontHotLine.Charset = DEFAULT_CHARSET
+            FontHotLine.Color = 2631720
+            FontHotLine.Height = -13
+            FontHotLine.Name = 'Tahoma'
+            FontHotLine.Style = []
+            FontLine.Charset = DEFAULT_CHARSET
+            FontLine.Color = 2631720
+            FontLine.Height = -13
+            FontLine.Name = 'Tahoma'
+            FontLine.Style = []
+            FontSelLine.Charset = DEFAULT_CHARSET
+            FontSelLine.Color = 2631720
+            FontSelLine.Height = -13
+            FontSelLine.Name = 'Tahoma'
+            FontSelLine.Style = []
+            ColumnsFont.Charset = DEFAULT_CHARSET
+            ColumnsFont.Color = 2631720
+            ColumnsFont.Height = -13
+            ColumnsFont.Name = 'Segoe UI'
+            ColumnsFont.Style = []
+            DrawColumnBorded = False
+            ColWidths = (
+              651)
+            RowHeights = (
+              30
+              64)
+          end
+          object Panel11: TPanel
+            Left = 0
+            Top = 0
+            Width = 961
+            Height = 40
+            Align = alTop
+            BevelOuter = bvNone
+            Color = clWhite
+            ParentBackground = False
+            TabOrder = 1
+            object Shape6: TShape
+              Left = 0
+              Top = 39
+              Width = 961
+              Height = 1
+              Align = alBottom
+              Brush.Color = 16316664
+              Pen.Color = 16316664
+              ExplicitTop = 38
+              ExplicitWidth = 708
+            end
+            object ButtonFlatTasksAdd: TButtonFlat
+              AlignWithMargins = True
+              Left = 5
+              Top = 5
+              Width = 120
+              Height = 29
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -13
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -13
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 0
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatTasksAddClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 0
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object ButtonFlatTasksDelete: TButtonFlat
+              AlignWithMargins = True
+              Left = 255
+              Top = 5
+              Width = 120
+              Height = 29
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = #1059#1076#1072#1083#1080#1090#1100
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -13
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -13
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 4
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatTasksDeleteClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 1
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object ButtonFlatTasksEdit: TButtonFlat
+              AlignWithMargins = True
+              Left = 130
+              Top = 5
+              Width = 120
+              Height = 29
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -13
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -13
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 12
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatTasksEditClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 2
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object ButtonFlatLoadTasks: TButtonFlat
+              AlignWithMargins = True
+              Left = 915
+              Top = 5
+              Width = 41
+              Height = 29
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 5
+              Margins.Bottom = 5
+              Align = alRight
+              Caption = ''
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = clWhite
+              FontOver.Height = -13
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = clWhite
+              FontDown.Height = -13
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 13
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatLoadTasksClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 3
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+            end
+            object ButtonFlatTasksTelegram: TButtonFlat
+              AlignWithMargins = True
+              Left = 380
+              Top = 5
+              Width = 120
+              Height = 29
+              Margins.Left = 5
+              Margins.Top = 5
+              Margins.Right = 0
+              Margins.Bottom = 5
+              Align = alLeft
+              Caption = #1053#1072#1087#1080#1089#1072#1090#1100
+              ColorNormal = 16250610
+              ColorOver = 16514041
+              ColorPressed = 15789800
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = 6250335
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              FontOver.Charset = DEFAULT_CHARSET
+              FontOver.Color = 6250335
+              FontOver.Height = -13
+              FontOver.Name = 'Segoe UI'
+              FontOver.Style = [fsBold]
+              FontDown.Charset = DEFAULT_CHARSET
+              FontDown.Color = 6250335
+              FontDown.Height = -13
+              FontDown.Name = 'Segoe UI'
+              FontDown.Style = [fsBold]
+              IgnorBounds = True
+              ImageIndentLeft = 8
+              ImageIndex = 23
+              Images = ImageListSmall
+              ImagesOver = ImageListOver
+              Transparent = True
+              OnClick = ButtonFlatTasksTelegramClick
+              RoundRectParam = 8
+              Shape = stRoundRect
+              TabOrder = 4
+              TabStop = True
+              TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
             end
           end
         end
@@ -5629,7 +5068,7 @@ object FormMain: TFormMain
     Left = 833
     Top = 513
     Bitmap = {
-      494C010118001D00040018001800FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A001D00040018001800FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000A8000000010020000000000000FC
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5647,6 +5086,8 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000030303110707
+      0720070707200404041200000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5657,6 +5098,8 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000002020209161616632C2C2CBF343434E13C3C
+      3CFF3C3C3CFF353535E42C2C2CBF1818186A0202020C00000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5667,6 +5110,8 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000015151557353535E43C3C3CFF3C3C3CFF3B3B3BF82D2D
+      2DC32C2C2CBF393939F03C3C3CFF3C3C3CFF363636E91515155F000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5674,100 +5119,191 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000007030303110303031103030311030303110303
+      0311030303110303031103030310010101060000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000010101041D1D1D7F3A3A3AFA3B3B3BFA292929B20F0F0F450606061C0000
+      000200000000040404180E0E0E3A282828AD3A3A3AF93B3B3BFB1F1F1F880101
+      0106000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000019191969353535E1353535E1353535E1353535E13535
+      35E1353535E1353535E1353535DF303030CA1919197000000005000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      00001A1A1A753B3B3BFD393939F0161616610000000100000000000000000000
+      00000000000000000000000000000000000013131353373737ED3B3B3BFE1E1E
+      1E80000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+      3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3B3B3BFE262626A6000000020000
+      0000000000000000000000000000000000000000000000000000000000000E0E
+      0E3B3A3A3AF43A3A3AF40F0F0F40000000000000000000000000000000030C0C
+      0C360C0C0C38010101040000000000000000000000000C0C0C37383838F13A3A
+      3AF70F0F0F450000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF3A3A3AF9343434DB3232
+      32D9323232D9333333DA373737EA3B3B3BFE3C3C3CFF3B3B3BFE1111114A0000
+      0000000000000000000000000000000000000000000000000000000000002C2C
+      2CBE3C3C3CFC1B1B1B77000000000000000000000000000000000202020D3333
+      33DA363636E304040412000000000000000000000000000000001818186C3C3C
+      3CFC2F2F2FC90000000100000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF343434DB0303030E0000
+      00000000000000000000040404172F2F2FCC3C3C3CFF3C3C3CFF232323970000
+      00000000000000000000000000000000000000000000000000000909092C3C3C
+      3CFC323232D90101010B000000000000000000000000000000000202020D3333
+      33DA363636E304040412000000000000000000000000000000000202020D3131
+      31D53B3B3BFD0C0C0C3700000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF343434DB0303030E0000
+      00000000000000000000000000001D1D1D7A3C3C3CFF3C3C3CFF272727AA0000
+      00000000000000000000000000000000000000000000000000001A1A1A713B3B
+      3BFE2121218D00000000000000000000000000000000000000000202020D3333
+      33DA363636E30404041200000000000000000000000000000000000000001E1E
+      1E803C3C3CFF1D1D1D7D00000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF343434DB0202020F0000
+      00010000000100000001030303102D2D2DC23C3C3CFF3C3C3CFF1F1F1F870000
+      0000000000000000000000000000000000000000000000000000232323993C3C
+      3CFF1414145700000000000000000000000000000000000000000202020D3333
+      33DA363636E30404041200000000000000000000000000000000000000001111
+      114B3C3C3CFF262626A500000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF393939F62E2E2EC52D2D
+      2DC22D2D2DC22D2D2DC3343434DD3B3B3BFE3C3C3CFF3B3B3BF8080808290000
+      0000000000000000000000000000000000000000000000000000272727A73C3C
+      3CFF0F0F0F4500000000000000000000000000000000000000000202020D3333
+      33DA363636E30404041200000000000000000000000000000000000000000C0C
+      0C393C3C3CFF292929B300000001000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+      3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF363636E613131355000000000000
+      00000000000000000000000000000000000000000000000000002525259E3C3C
+      3CFF1212124F00000000000000000000000000000000000000000101010A2727
+      27A4272727AA0202020D00000000000000000000000000000000000000000F0F
+      0F433C3C3CFF272727AA00000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+      3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF282828AE0202020C000000000000
+      00000000000000000000000000000000000000000000000000001D1D1D7F3B3B
+      3BFE1D1D1D7D0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000001919
+      19703C3C3CFF2121218B00000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF383838F1252525A12424
+      249C2424249C282828AB393939F33C3C3CFE3B3B3BFE2121218B000000000000
+      00000000000000000000000000000000000000000000000000000E0E0E413B3B
+      3BFE2F2F2FC90101010600000000000000000000000000000000000000051212
+      1252131313550101010600000000000000000000000000000000000000032C2C
+      2CBF3B3B3BFE1212124D00000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF343434DB0303030E0000
+      00000000000000000000101010473B3B3BFE3C3C3CFF393939F5000000050000
+      0000000000000000000000000000000000000000000000000000000000013232
+      32D63A3A3AF912121253000000000000000000000000000000000202020D3333
+      33DA363636E304040412000000000000000000000000000000001111114C3A3A
+      3AF9343434E00101010400000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF343434DB0303030E0000
+      00000000000000000000050505143B3B3BFE3C3C3CFF3C3C3CFF040404130000
+      0000000000000000000000000000000000000000000000000000000000001414
+      145B3A3A3AFA353535E20707071F000000000000000000000000010101061919
+      196D1A1A1A710202020800000000000000000000000006060618343434DB3B3B
+      3BFB171717660000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF343434DB0202020F0000
+      00010000000104040410232323933B3B3BFE3C3C3CFF373737ED000000020000
+      0000000000000000000000000000000000000000000000000000000000000101
+      0104262626A63B3B3BFE323232D2070707250000000000000000000000000000
+      0000000000000000000000000000000000000707071E2F2F2FCC3B3B3BFE2929
+      29B0010101060000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+      3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3B3B3BFE20202089000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      00000303030C292929B33B3B3BFE393939F21A1A1A7405050515000000000000
+      00000000000000000000040404161919196E383838EF3C3C3CFF2C2C2CBC0404
+      0410000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000001C1C1C763C3C3CFF3C3C3CFF3C3C3CFF3C3C3CFF3C3C
+      3CFF3C3C3CFF3C3C3CFF3C3C3CFF3B3B3BFD2B2B2BB804040410000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000202020922222292393939F63C3C3CFF363636EA313131CE1D1D
+      1D811E1E1E83313131D3373737EA3B3B3BFE3A3A3AF72424249B0101010A0000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5775,7 +5311,11 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000017171764323232D7323232D7323232D7323232D73232
+      32D7323232D7323232D62C2C2CBE1818186C0303030C00000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000C0C0C37252525A23B3B3BFE3B3B3BFE3C3C
+      3CFF3C3C3CFF3B3B3BFE3B3B3BFE272727A90E0E0E3D00000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5786,109 +5326,8 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000A0A0A2D1515
+      155F1515155F0B0B0B3100000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7649,16 +7088,16 @@ object FormMain: TFormMain
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000424D3E000000000000003E000000
       2800000060000000A80000000100010000000000E00700000000000000000000
-      000000000000000000000000FFFFFF0000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFE3FFFFF
+      000000000000000000000000FFFFFF00FFFFFFFFFFFF000000000000FFFFFFFF
+      C3FF000000000000FFFFFFFE007F000000000000FFFFFFFC003F000000000000
+      FC00FFF0080F000000000000FC003FF07F0F000000000000FC001FE1C3870000
+      00000000FC001FE3C3C3000000000000FC1C1FC3C3C3000000000000FC1E1FC7
+      C3E3000000000000FC001FC7C3E3000000000000FC001FC7C3E1000000000000
+      FC003FC7C3E3000000000000FC003FC7FFE3000000000000FC003FC3C3C30000
+      00000000FC1C1FC3C3C3000000000000FC1C1FE1C387000000000000FC001FE0
+      FF07000000000000FC003FF03C0F000000000000FC003FF8001F000000000000
+      FC007FFE007F000000000000FFFFFFFFC3FF000000000000FFFFFFFFFFFF0000
+      00000000FFFFFFFFFFFF000000000000FFFFFFFFFFFFFFFFFFFFFFFFFE3FFFFF
       FFFFFFFFFFFFFFFFFE1FFFFFFFFFFFFFFFFFFFFFFC0FFFFFFFFFFFC3FFFFFFFF
       F0038FFFFFFFFFC3FFE3FFFFF00307F00007FF83FFE0FFFFE00007E00003F000
       0FE01FFFC00007C00001F0001FE007FFC00007C00801F8003FE001FFC0000780
@@ -8289,6 +7728,7 @@ object FormMain: TFormMain
     Top = 356
   end
   object ChromiumGKeep: TChromium
+    OnJsdialog = ChromiumGKeepJsdialog
     OnBeforePopup = ChromiumGKeepBeforePopup
     OnAfterCreated = ChromiumGKeepAfterCreated
     Left = 604
