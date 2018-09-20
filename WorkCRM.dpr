@@ -1,7 +1,8 @@
 program WorkCRM;
 
 uses
-  Vcl.Forms, SysUtils,
+  Vcl.Forms,
+  SysUtils,
   Work.Main in 'Work.Main.pas' {FormMain},
   SQLite3 in '..\..\SQLite\SQLite3.pas',
   SQLiteTable3 in '..\..\SQLite\SQLiteTable3.pas',
@@ -9,7 +10,6 @@ uses
   Work.DB in 'Work.DB.pas',
   Work.Table.Customers in 'Work.Table.Customers.pas',
   Work.Table.Tasks in 'Work.Table.Tasks.pas',
-  HGM.Common.Notify in '..\..\Components\HGM.Common.Notify.pas',
   Work.Table.History in 'Work.Table.History.pas',
   uCEFApplication;
 

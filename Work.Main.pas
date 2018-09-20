@@ -225,6 +225,8 @@ type
     ButtonFlatShowCustomerInfo: TButtonFlat;
     Shape5: TShape;
     Shape6: TShape;
+    NotifyWindow: TNotifyWindow;
+    NotifyPanel: TNotifyPanel;
     procedure FormCreate(Sender: TObject);
     procedure TableExCostomersGetData(FCol, FRow: Integer; var Value: string);
     procedure TimerTimeTimer(Sender: TObject);
@@ -298,12 +300,13 @@ type
       const originUrl: ustring; dialogType: TCefJsDialogType; const messageText,
       defaultPromptText: ustring; const callback: ICefJsDialogCallback;
       out suppressMessage, Result: Boolean);
+    procedure TableExCustomersMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
    private
     FCWJiraClosed:Boolean;
     FCWGKeepClosed:Boolean;
 
     FAppState:TAppState;
-    FNotify:TNotifyPanel;
     FNotifyStorage:TNotifyStorage;
     //Ядро БД
     FCore:TDatabaseCore;
@@ -345,6 +348,7 @@ type
 
     function ShowInfoOk(Text:string; OnlyList:Boolean = False):Boolean;
     function ShowWrongInfo(Text:string; OnlyList:Boolean = False):Boolean;
+    function ShowNotify(Caption, Text:string):Boolean;
 
     function CanIDoSmt:Boolean;
 
@@ -513,7 +517,17 @@ begin
  NItem.Text:=Text;
  NItem.Kind:=nkOK;
  FNotifyStorage.Insert(0, NItem);
- if not OnlyList then FNotify.OK('Готово', Text);
+ if not OnlyList then NotifyPanel.OK('Готово', Text);
+end;
+
+function TFormMain.ShowNotify(Caption, Text: string): Boolean;
+var NItem:TNotifyItem;
+begin
+ NItem.Text:=Text;
+ NItem.Kind:=nkOK;
+ FNotifyStorage.Insert(0, NItem);
+ NotifyWindow.Info(Caption, Text);
+ Result:=True;
 end;
 
 procedure TFormMain.OpenPage(Panel: TPanel);
@@ -554,7 +568,7 @@ begin
  NItem.Text:=Text;
  NItem.Kind:=nkWarning;
  FNotifyStorage.Insert(0, NItem);
- if not OnlyList then FNotify.Warning('Ошибка', Text);
+ if not OnlyList then NotifyPanel.Warning('Ошибка', Text);
 end;
 
 function TFormMain.AddCustomer: Integer;
@@ -925,9 +939,12 @@ procedure TFormMain.ChromiumGKeepJsdialog(Sender: TObject;
   dialogType: TCefJsDialogType; const messageText, defaultPromptText: ustring;
   const callback: ICefJsDialogCallback; out suppressMessage, Result: Boolean);
 begin
- Result:=False;
- suppressMessage:=True;
- ShowMessage(messageText+#13#10+defaultPromptText);
+ if dialogType = JSDIALOGTYPE_ALERT then
+  begin
+   Result:=True;
+   suppressMessage:=True;
+   ShowNotify('Google Keep', messageText);
+  end;
 end;
 
 procedure TFormMain.CreateTables;
@@ -1126,12 +1143,7 @@ begin
  FCWJiraClosed:=True;
  FCWGKeepClosed:=True;
  TM:=GetTickCount;
- //Система уведомлений
- FNotify:=TNotifyPanel.Create(Self);
- FNotify.Bottom:=10;
- FNotify.Right:=10;
  FNotifyStorage:=TNotifyStorage.Create(TableExNotify);
- //FNotifyStorage.Add(TNotifyItem.Create('Нет', nkInfo));
  //Инициализация БД
  FCore:=TDatabaseCore.Create(ExtractFilePath(Application.ExeName)+'data.db');
  if not FCore.Work then Application.Terminate;
@@ -1150,7 +1162,7 @@ end;
 
 procedure TFormMain.FormResize(Sender: TObject);
 begin
- if Assigned(FNotify) then FNotify.UpdateGlobalSize;
+ if Assigned(NotifyPanel) then NotifyPanel.UpdateGlobalSize;
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);
@@ -1177,6 +1189,17 @@ procedure TFormMain.TableExCustomersItemClick(Sender: TObject;
 begin
  if not IndexInList(Index, FCustomers.Count) then Exit;
  SetCustomerInfo(FCustomers[Index]);
+end;
+
+procedure TFormMain.TableExCustomersMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var Pt:TPoint;
+begin
+ if Button = mbRight then
+  begin
+   if not IndexInList(TableExCustomers.ItemUnderMouse, FCustomers.Count) then Exit;
+   Pt:=Mouse.CursorPos;
+   PopupMenuCustomer.Popup(Pt.X, Pt.Y);
+  end;
 end;
 
 procedure TFormMain.TableExCustomerTasksGetData(FCol, FRow: Integer; var Value: string);
