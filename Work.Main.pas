@@ -16,7 +16,7 @@ uses
   Work.Table.Customers, Work.Table.Tasks,
   Work.Table.History, Work.DB, System.Rtti, Vcl.Menus, uCEFChromium,
   uCEFWindowParent, uCEFChromiumWindow, uCEFTypes, uCEFInterfaces, uCEFConstants,
-  acPNG;
+  acPNG, HGM.Controls.VirtualTable, HGM.Button;
 
 const
   CEF_AFTERCREATED_GKEEP       = WM_APP + $A10;

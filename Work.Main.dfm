@@ -890,7 +890,7 @@ object FormMain: TFormMain
           Left = 15
           Top = 3
           Width = 137
-          Height = 76
+          Height = 45
           Margins.Left = 15
           Align = alLeft
           Caption = #1047#1072#1082#1072#1079#1095#1080#1082
@@ -901,7 +901,6 @@ object FormMain: TFormMain
           Font.Style = []
           ParentFont = False
           Layout = tlCenter
-          ExplicitHeight = 45
         end
       end
       object Panel22: TPanel
@@ -3414,8 +3413,8 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 3
-              Width = 200
-              Height = 34
+              Width = 105
+              Height = 23
               Margins.Left = 10
               Align = alClient
               Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103
@@ -3426,8 +3425,6 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Layout = tlCenter
-              ExplicitWidth = 105
-              ExplicitHeight = 23
             end
             object ButtonFlatHideCustomerInfo: TButtonFlat
               Left = 213
