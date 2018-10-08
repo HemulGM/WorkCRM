@@ -692,6 +692,7 @@ object FormMain: TFormMain
       ItemIndex = -1
       GetData = TableExNotifyGetData
       ProcEmpty = True
+      Columns = <>
       ShowScrollBar = False
       CanNoSelect = False
       ItemCount = 1
@@ -721,10 +722,6 @@ object FormMain: TFormMain
       ColumnsFont.Style = []
       DrawColumnBorded = False
       DrawColumnSections = False
-      ColWidths = (
-        60)
-      RowHeights = (
-        25)
     end
     object ButtonFlat5: TButtonFlat
       AlignWithMargins = True
@@ -1087,6 +1084,7 @@ object FormMain: TFormMain
               ItemIndex = -1
               OnItemClick = TableExHotTasksItemClick
               ProcEmpty = True
+              Columns = <>
               DefaultDataDrawing = False
               ShowScrollBar = False
               CanNoSelect = False
@@ -1120,10 +1118,6 @@ object FormMain: TFormMain
               SetFocusOnEnter = True
               DrawColumnSections = False
               FlashSelectedCol = True
-              ColWidths = (
-                60)
-              RowHeights = (
-                120)
             end
             object Panel26: TPanel
               Left = 1
@@ -1268,6 +1262,7 @@ object FormMain: TFormMain
             TabOrder = 3
             OnDrawCellData = TableExFeedDrawCellData
             ItemIndex = -1
+            Columns = <>
             DefaultDataDrawing = False
             ShowScrollBar = False
             CanNoSelect = False
@@ -1295,10 +1290,6 @@ object FormMain: TFormMain
             ColumnsFont.Style = []
             SetFocusOnEnter = True
             DrawColumnSections = False
-            ColWidths = (
-              60)
-            RowHeights = (
-              50)
           end
         end
       end
@@ -1386,6 +1377,7 @@ object FormMain: TFormMain
             OnDrawCellData = TableExTasksDrawCellData
             ItemIndex = -1
             GetData = TableExTasksGetData
+            Columns = <>
             CanNoSelect = False
             ItemCount = 1
             LineColor = clWhite
@@ -1414,11 +1406,6 @@ object FormMain: TFormMain
             ColumnsFont.Name = 'Segoe UI'
             ColumnsFont.Style = []
             DrawColumnBorded = False
-            ColWidths = (
-              651)
-            RowHeights = (
-              30
-              64)
           end
           object Panel11: TPanel
             Left = 0
@@ -1687,7 +1674,7 @@ object FormMain: TFormMain
           Left = 15
           Top = 3
           Width = 137
-          Height = 76
+          Height = 45
           Margins.Left = 15
           Align = alLeft
           Caption = #1047#1072#1082#1072#1079#1095#1080#1082
@@ -1698,7 +1685,6 @@ object FormMain: TFormMain
           Font.Style = []
           ParentFont = False
           Layout = tlCenter
-          ExplicitHeight = 45
         end
       end
       object Panel22: TPanel
@@ -1962,7 +1948,7 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 931
+              Width = 186
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -1976,7 +1962,6 @@ object FormMain: TFormMain
               Font.Name = 'Segoe UI'
               Font.Style = []
               ParentFont = False
-              ExplicitWidth = 186
             end
             object TableExCustomerTasks: TTableEx
               AlignWithMargins = True
@@ -1993,6 +1978,7 @@ object FormMain: TFormMain
               TabOrder = 0
               ItemIndex = -1
               GetData = TableExCustomerTasksGetData
+              Columns = <>
               CanNoSelect = False
               ItemCount = 1
               FontHotLine.Charset = DEFAULT_CHARSET
@@ -2017,10 +2003,6 @@ object FormMain: TFormMain
               ColumnsFont.Name = 'Tahoma'
               ColumnsFont.Style = []
               DrawColumnSections = False
-              ColWidths = (
-                60)
-              RowHeights = (
-                25)
             end
           end
         end
@@ -2110,6 +2092,7 @@ object FormMain: TFormMain
             ItemIndex = 0
             OnItemClick = TableExCustomersItemClick
             GetData = TableExCostomersGetData
+            Columns = <>
             CanNoSelect = False
             ItemCount = 1
             LineColor = clWhite
@@ -2142,10 +2125,6 @@ object FormMain: TFormMain
             DrawColumnBorded = False
             DrawColumnSections = False
             MouseRightClickTooClick = True
-            ColWidths = (
-              420)
-            RowHeights = (
-              30)
           end
           object Panel6: TPanel
             Left = 0
@@ -2451,8 +2430,8 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 3
-              Width = 200
-              Height = 34
+              Width = 105
+              Height = 23
               Margins.Left = 10
               Align = alClient
               Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103
@@ -2463,8 +2442,6 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Layout = tlCenter
-              ExplicitWidth = 105
-              ExplicitHeight = 23
             end
             object ButtonFlatHideCustomerInfo: TButtonFlat
               Left = 213
@@ -4454,7 +4431,7 @@ object FormMain: TFormMain
           Left = 15
           Top = 3
           Width = 204
-          Height = 76
+          Height = 45
           Margins.Left = 15
           Align = alLeft
           Caption = #1048#1085#1089#1090#1088#1091#1084#1077#1085#1090#1099
@@ -4465,7 +4442,6 @@ object FormMain: TFormMain
           Font.Style = []
           ParentFont = False
           Layout = tlCenter
-          ExplicitHeight = 45
         end
       end
       object Panel32: TPanel
@@ -4520,7 +4496,7 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 914
+              Width = 225
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -4535,7 +4511,6 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Transparent = True
-              ExplicitWidth = 225
             end
             object Label23: TLabel
               Left = 27
@@ -4609,7 +4584,7 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 914
+              Width = 186
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -4624,7 +4599,6 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Transparent = True
-              ExplicitWidth = 186
             end
           end
         end
@@ -4763,7 +4737,7 @@ object FormMain: TFormMain
     Left = 848
     Top = 352
     Bitmap = {
-      494C010103000500040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010103000500080020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5310,7 +5284,7 @@ object FormMain: TFormMain
     Left = 833
     Top = 513
     Bitmap = {
-      494C01011B001D00040018001800FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011B001D00080018001800FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000A8000000010020000000000000FC
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7416,7 +7390,7 @@ object FormMain: TFormMain
     Left = 565
     Top = 433
     Bitmap = {
-      494C010104000900040010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010104000900080010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7692,7 +7666,7 @@ object FormMain: TFormMain
     Left = 565
     Top = 489
     Bitmap = {
-      494C010104000900040010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010104000900080010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
