@@ -179,8 +179,12 @@ object FormMain: TFormMain
         Shape = stCircle
         ShowFocusRect = False
         TabOrder = 1
-        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+        SubTextFont.Charset = DEFAULT_CHARSET
+        SubTextFont.Color = clWhite
+        SubTextFont.Height = -13
+        SubTextFont.Name = 'Tahoma'
+        SubTextFont.Style = []
       end
     end
     object Panel3: TPanel
@@ -291,8 +295,12 @@ object FormMain: TFormMain
         Shape = stRoundRect
         ShowFocusRect = False
         TabOrder = 0
-        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+        SubTextFont.Charset = DEFAULT_CHARSET
+        SubTextFont.Color = clWhite
+        SubTextFont.Height = -13
+        SubTextFont.Name = 'Tahoma'
+        SubTextFont.Style = []
       end
       object ButtonFlatNewTask: TButtonFlat
         AlignWithMargins = True
@@ -335,8 +343,12 @@ object FormMain: TFormMain
         Shape = stRoundRect
         ShowFocusRect = False
         TabOrder = 1
-        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+        SubTextFont.Charset = DEFAULT_CHARSET
+        SubTextFont.Color = clWhite
+        SubTextFont.Height = -13
+        SubTextFont.Name = 'Tahoma'
+        SubTextFont.Style = []
       end
     end
     object ButtonFlat3: TButtonFlat
@@ -377,8 +389,12 @@ object FormMain: TFormMain
       RoundRectParam = 0
       ShowFocusRect = False
       TabOrder = 1
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatCustomers: TButtonFlat
       AlignWithMargins = True
@@ -420,8 +436,12 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 2
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatTasks: TButtonFlat
       AlignWithMargins = True
@@ -463,8 +483,12 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 3
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatCalendar: TButtonFlat
       AlignWithMargins = True
@@ -506,8 +530,12 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 4
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatStatistics: TButtonFlat
       AlignWithMargins = True
@@ -549,8 +577,12 @@ object FormMain: TFormMain
       ShowHint = False
       ShowFocusRect = False
       TabOrder = 5
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatFeed: TButtonFlat
       AlignWithMargins = True
@@ -592,8 +624,12 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 6
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlat4: TButtonFlat
       AlignWithMargins = True
@@ -633,8 +669,12 @@ object FormMain: TFormMain
       RoundRectParam = 0
       ShowFocusRect = False
       TabOrder = 7
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatTODO1: TButtonFlat
       AlignWithMargins = True
@@ -675,8 +715,12 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 8
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object TableExNotify: TTableEx
       Left = 0
@@ -761,8 +805,12 @@ object FormMain: TFormMain
       RoundRectParam = 0
       ShowFocusRect = False
       TabOrder = 10
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatTools: TButtonFlat
       AlignWithMargins = True
@@ -804,8 +852,12 @@ object FormMain: TFormMain
       Shape = stRoundRect
       ShowFocusRect = False
       TabOrder = 11
-      TabStop = True
       TextFormat = [tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
   end
   object PanelClient: TPanel
@@ -909,12 +961,12 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -16
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
+              Flat = False
               FontOver.Charset = DEFAULT_CHARSET
               FontOver.Color = 6250335
               FontOver.Height = -16
@@ -934,8 +986,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatFeedNewCustomer: TButtonFlat
               AlignWithMargins = True
@@ -952,12 +1008,12 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -16
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
+              Flat = False
               FontOver.Charset = DEFAULT_CHARSET
               FontOver.Color = 6250335
               FontOver.Height = -16
@@ -977,8 +1033,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object Panel29: TPanel
               AlignWithMargins = True
@@ -1020,12 +1080,12 @@ object FormMain: TFormMain
                 ColorNormal = clWhite
                 ColorOver = clWhite
                 ColorPressed = clWhite
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWhite
                 Font.Height = -13
                 Font.Name = 'Tahoma'
                 Font.Style = []
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = clWhite
                 FontOver.Height = -13
@@ -1044,8 +1104,12 @@ object FormMain: TFormMain
                 RoundRectParam = 0
                 ShowFocusRect = False
                 TabOrder = 1
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
             end
           end
@@ -1156,12 +1220,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16514041
                 ColorPressed = 15789800
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = clWhite
                 FontOver.Height = -13
@@ -1181,8 +1245,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 0
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
             end
             object Panel27: TPanel
@@ -1469,8 +1537,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatTasksDelete: TButtonFlat
               AlignWithMargins = True
@@ -1513,8 +1585,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatTasksEdit: TButtonFlat
               AlignWithMargins = True
@@ -1557,8 +1633,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 2
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatLoadTasks: TButtonFlat
               AlignWithMargins = True
@@ -1601,8 +1681,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 3
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatTasksTelegram: TButtonFlat
               AlignWithMargins = True
@@ -1645,8 +1729,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 4
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
         end
@@ -1674,7 +1762,7 @@ object FormMain: TFormMain
           Left = 15
           Top = 3
           Width = 137
-          Height = 45
+          Height = 76
           Margins.Left = 15
           Align = alLeft
           Caption = #1047#1072#1082#1072#1079#1095#1080#1082
@@ -1685,6 +1773,7 @@ object FormMain: TFormMain
           Font.Style = []
           ParentFont = False
           Layout = tlCenter
+          ExplicitHeight = 45
         end
       end
       object Panel22: TPanel
@@ -1740,12 +1829,12 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
+              Flat = False
               FontOver.Charset = DEFAULT_CHARSET
               FontOver.Color = 6250335
               FontOver.Height = -13
@@ -1765,8 +1854,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatCustomerClose: TButtonFlat
               AlignWithMargins = True
@@ -1783,12 +1876,12 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
+              Flat = False
               FontOver.Charset = DEFAULT_CHARSET
               FontOver.Color = 6250335
               FontOver.Height = -13
@@ -1808,8 +1901,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
           object Panel25: TPanel
@@ -1948,7 +2045,7 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 186
+              Width = 931
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -1962,6 +2059,7 @@ object FormMain: TFormMain
               Font.Name = 'Segoe UI'
               Font.Style = []
               ParentFont = False
+              ExplicitWidth = 186
             end
             object TableExCustomerTasks: TTableEx
               AlignWithMargins = True
@@ -2187,8 +2285,12 @@ object FormMain: TFormMain
               RoundRectParam = 8
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatCustomersEdit: TButtonFlat
               AlignWithMargins = True
@@ -2230,8 +2332,12 @@ object FormMain: TFormMain
               RoundRectParam = 8
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatCustomersDel: TButtonFlat
               AlignWithMargins = True
@@ -2273,8 +2379,12 @@ object FormMain: TFormMain
               RoundRectParam = 8
               ShowFocusRect = False
               TabOrder = 2
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatCustomersLoad: TButtonFlat
               AlignWithMargins = True
@@ -2315,8 +2425,12 @@ object FormMain: TFormMain
               RoundRectParam = 8
               ShowFocusRect = False
               TabOrder = 3
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatCustomerTelegram: TButtonFlat
               AlignWithMargins = True
@@ -2358,8 +2472,12 @@ object FormMain: TFormMain
               RoundRectParam = 8
               ShowFocusRect = False
               TabOrder = 4
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatShowCustomerInfo: TButtonFlat
               AlignWithMargins = True
@@ -2400,8 +2518,12 @@ object FormMain: TFormMain
               RoundRectParam = 8
               ShowFocusRect = False
               TabOrder = 5
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
         end
@@ -2430,8 +2552,8 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 3
-              Width = 105
-              Height = 23
+              Width = 200
+              Height = 34
               Margins.Left = 10
               Align = alClient
               Caption = #1048#1085#1092#1086#1088#1084#1072#1094#1080#1103
@@ -2442,6 +2564,8 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Layout = tlCenter
+              ExplicitWidth = 105
+              ExplicitHeight = 23
             end
             object ButtonFlatHideCustomerInfo: TButtonFlat
               Left = 213
@@ -2479,8 +2603,12 @@ object FormMain: TFormMain
               Shape = stCircle
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
           object PanelCustInfoName: TPanel
@@ -3375,8 +3503,12 @@ object FormMain: TFormMain
               RoundRectParam = 0
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlat9: TButtonFlat
               Left = 0
@@ -3413,8 +3545,12 @@ object FormMain: TFormMain
               RoundRectParam = 0
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
           object PanelCustInfoContact: TPanel
@@ -3492,8 +3628,12 @@ object FormMain: TFormMain
               RoundRectParam = 0
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object EditCustPhone: TEdit
               Left = 64
@@ -3624,12 +3764,12 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
+              Flat = False
               FontOver.Charset = DEFAULT_CHARSET
               FontOver.Color = 6250335
               FontOver.Height = -13
@@ -3649,8 +3789,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 0
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
             object ButtonFlatTaskClose: TButtonFlat
               AlignWithMargins = True
@@ -3667,12 +3811,12 @@ object FormMain: TFormMain
               ColorNormal = 16250610
               ColorOver = 16514041
               ColorPressed = 15789800
-              Flat = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = 6250335
               Font.Height = -13
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
+              Flat = False
               FontOver.Charset = DEFAULT_CHARSET
               FontOver.Color = 6250335
               FontOver.Height = -13
@@ -3692,8 +3836,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
           object Panel7: TPanel
@@ -3874,12 +4022,12 @@ object FormMain: TFormMain
                 ColorNormal = 16242577
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -3899,8 +4047,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 4
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskNormal: TButtonFlat
                 Tag = 1
@@ -3912,12 +4064,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -3937,8 +4089,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 5
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskInTheWork: TButtonFlat
                 Tag = 2
@@ -3950,12 +4106,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -3975,8 +4131,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 6
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskDone: TButtonFlat
                 Tag = 3
@@ -3988,12 +4148,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -4013,8 +4173,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 7
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskNewCustomer: TButtonFlat
                 Left = 598
@@ -4050,8 +4214,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 8
-                TabStop = True
                 TextFormat = [tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object EditTaskName: TEdit
                 Left = 121
@@ -4069,12 +4237,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -4094,8 +4262,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 10
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskPr1: TButtonFlat
                 Tag = 1
@@ -4107,12 +4279,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -4132,8 +4304,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 11
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskPr2: TButtonFlat
                 Tag = 2
@@ -4145,12 +4321,12 @@ object FormMain: TFormMain
                 ColorNormal = 16242577
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -4170,8 +4346,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 12
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskPr3: TButtonFlat
                 Tag = 3
@@ -4183,12 +4363,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -4208,8 +4388,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 13
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object ButtonFlatTaskPr4: TButtonFlat
                 Tag = 4
@@ -4221,12 +4405,12 @@ object FormMain: TFormMain
                 ColorNormal = 16250610
                 ColorOver = 16442294
                 ColorPressed = 16242577
-                Flat = False
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = 6250335
                 Font.Height = -13
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                Flat = False
                 FontOver.Charset = DEFAULT_CHARSET
                 FontOver.Color = 6250335
                 FontOver.Height = -13
@@ -4246,8 +4430,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 14
-                TabStop = True
                 TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object EditTaskJira: TEdit
                 Left = 121
@@ -4292,8 +4480,12 @@ object FormMain: TFormMain
                 Shape = stRoundRect
                 ShowFocusRect = False
                 TabOrder = 16
-                TabStop = True
                 TextFormat = [tfSingleLine, tfVerticalCenter]
+                SubTextFont.Charset = DEFAULT_CHARSET
+                SubTextFont.Color = clWhite
+                SubTextFont.Height = -13
+                SubTextFont.Name = 'Tahoma'
+                SubTextFont.Style = []
               end
               object PanelTaskAuto: TPanel
                 Left = 9
@@ -4326,12 +4518,12 @@ object FormMain: TFormMain
                   ColorNormal = 10991985
                   ColorOver = 12306834
                   ColorPressed = 8557896
-                  Flat = False
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWhite
                   Font.Height = -13
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
+                  Flat = False
                   FontOver.Charset = DEFAULT_CHARSET
                   FontOver.Color = clWhite
                   FontOver.Height = -13
@@ -4350,8 +4542,12 @@ object FormMain: TFormMain
                   Shape = stRoundRect
                   ShowFocusRect = False
                   TabOrder = 1
-                  TabStop = True
                   TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                  SubTextFont.Charset = DEFAULT_CHARSET
+                  SubTextFont.Color = clWhite
+                  SubTextFont.Height = -13
+                  SubTextFont.Name = 'Tahoma'
+                  SubTextFont.Style = []
                 end
                 object CheckBoxTaskAutoCProject: TCheckBox
                   Left = 117
@@ -4369,12 +4565,12 @@ object FormMain: TFormMain
                   ColorNormal = 12291439
                   ColorOver = 12950915
                   ColorPressed = 11434325
-                  Flat = False
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWhite
                   Font.Height = -13
                   Font.Name = 'Segoe UI'
                   Font.Style = [fsBold]
+                  Flat = False
                   FontOver.Charset = DEFAULT_CHARSET
                   FontOver.Color = clWhite
                   FontOver.Height = -13
@@ -4393,8 +4589,12 @@ object FormMain: TFormMain
                   Shape = stRoundRect
                   ShowFocusRect = False
                   TabOrder = 3
-                  TabStop = True
                   TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+                  SubTextFont.Charset = DEFAULT_CHARSET
+                  SubTextFont.Color = clWhite
+                  SubTextFont.Height = -13
+                  SubTextFont.Name = 'Tahoma'
+                  SubTextFont.Style = []
                 end
                 object CheckBoxTaskAutoHG: TCheckBox
                   Left = 272
@@ -4431,7 +4631,7 @@ object FormMain: TFormMain
           Left = 15
           Top = 3
           Width = 204
-          Height = 45
+          Height = 76
           Margins.Left = 15
           Align = alLeft
           Caption = #1048#1085#1089#1090#1088#1091#1084#1077#1085#1090#1099
@@ -4442,6 +4642,7 @@ object FormMain: TFormMain
           Font.Style = []
           ParentFont = False
           Layout = tlCenter
+          ExplicitHeight = 45
         end
       end
       object Panel32: TPanel
@@ -4496,7 +4697,7 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 225
+              Width = 914
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -4511,6 +4712,7 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Transparent = True
+              ExplicitWidth = 225
             end
             object Label23: TLabel
               Left = 27
@@ -4561,8 +4763,12 @@ object FormMain: TFormMain
               Shape = stRoundRect
               ShowFocusRect = False
               TabOrder = 1
-              TabStop = True
               TextFormat = [tfSingleLine, tfVerticalCenter]
+              SubTextFont.Charset = DEFAULT_CHARSET
+              SubTextFont.Color = clWhite
+              SubTextFont.Height = -13
+              SubTextFont.Name = 'Tahoma'
+              SubTextFont.Style = []
             end
           end
           object Panel36: TPanel
@@ -4584,7 +4790,7 @@ object FormMain: TFormMain
               AlignWithMargins = True
               Left = 10
               Top = 10
-              Width = 186
+              Width = 914
               Height = 28
               Margins.Left = 10
               Margins.Top = 10
@@ -4599,6 +4805,7 @@ object FormMain: TFormMain
               Font.Style = []
               ParentFont = False
               Transparent = True
+              ExplicitWidth = 186
             end
           end
         end
@@ -4694,8 +4901,12 @@ object FormMain: TFormMain
       RoundRectParam = 0
       ShowFocusRect = False
       TabOrder = 2
-      TabStop = True
       TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
     object ButtonFlatUPOK: TButtonFlat
       Left = 504
@@ -4726,8 +4937,12 @@ object FormMain: TFormMain
       RoundRectParam = 0
       ShowFocusRect = False
       TabOrder = 3
-      TabStop = True
       TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
+      SubTextFont.Charset = DEFAULT_CHARSET
+      SubTextFont.Color = clWhite
+      SubTextFont.Height = -13
+      SubTextFont.Name = 'Tahoma'
+      SubTextFont.Style = []
     end
   end
   object ImageList24: TImageList
@@ -4737,7 +4952,7 @@ object FormMain: TFormMain
     Left = 848
     Top = 352
     Bitmap = {
-      494C010103000500080020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101030005000C0020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5284,7 +5499,7 @@ object FormMain: TFormMain
     Left = 833
     Top = 513
     Bitmap = {
-      494C01011B001D00080018001800FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011B001D000C0018001800FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000A8000000010020000000000000FC
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7390,7 +7605,7 @@ object FormMain: TFormMain
     Left = 565
     Top = 433
     Bitmap = {
-      494C010104000900080010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101040009000C0010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7666,7 +7881,7 @@ object FormMain: TFormMain
     Left = 565
     Top = 489
     Bitmap = {
-      494C010104000900080010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101040009000C0010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7998,95 +8213,5 @@ object FormMain: TFormMain
     Right = 10
     Left = 714
     Top = 548
-  end
-  object oraAddPrivCat: TOraStoredProc
-    StoredProcName = 'sec.add_priv_cat'
-    SQL.Strings = (
-      'begin'
-      
-        '  sec.add_priv_cat(:P_USERNAME, :P_ROLE, :P_GRANT_OPTION, :P_ACT' +
-        'IVE, :P_CAT_ID, :P_ITEM_ID, :P_CODE, :P_MSG);'
-      'end;')
-    Left = 359
-    Top = 273
-    ParamData = <
-      item
-        DataType = ftString
-        Name = 'P_USERNAME'
-        ParamType = ptInput
-        Value = nil
-      end
-      item
-        DataType = ftString
-        Name = 'P_ROLE'
-        ParamType = ptInput
-        Value = nil
-      end
-      item
-        DataType = ftString
-        Name = 'P_GRANT_OPTION'
-        ParamType = ptInput
-        Value = nil
-        HasDefault = True
-      end
-      item
-        DataType = ftString
-        Name = 'P_ACTIVE'
-        ParamType = ptInput
-        Value = nil
-        HasDefault = True
-      end
-      item
-        DataType = ftString
-        Name = 'P_CAT_ID'
-        ParamType = ptInput
-        Value = nil
-        HasDefault = True
-      end
-      item
-        DataType = ftFloat
-        Name = 'P_ITEM_ID'
-        ParamType = ptInput
-        Value = nil
-        HasDefault = True
-      end
-      item
-        DataType = ftFloat
-        Name = 'P_CODE'
-        ParamType = ptOutput
-        Value = nil
-      end
-      item
-        DataType = ftString
-        Name = 'P_MSG'
-        ParamType = ptOutput
-        Value = nil
-      end>
-    CommandStoredProcName = 'sec.add_priv_cat'
-  end
-  object oraApplySecAdmin: TOraStoredProc
-    StoredProcName = 'sec.apply_sec_admin'
-    SQL.Strings = (
-      'begin'
-      '  sec.apply_sec_admin(:P_USERNAME);'
-      'end;')
-    Left = 463
-    Top = 273
-    ParamData = <
-      item
-        DataType = ftString
-        Name = 'P_USERNAME'
-        ParamType = ptInput
-        Value = nil
-      end>
-    CommandStoredProcName = 'sec.apply_sec_admin'
-  end
-  object OraSession: TOraSession
-    Options.Direct = True
-    Username = 'MALININ_GA'
-    Server = '10.102.101.150:1521:eltc'
-    LoginPrompt = False
-    Left = 511
-    Top = 325
   end
 end

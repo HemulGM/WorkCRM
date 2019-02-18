@@ -15,8 +15,7 @@ uses
 
   Work.Table.Customers, Work.Table.Tasks,
   Work.Table.History, Work.DB, System.Rtti, Vcl.Menus,
-  acPNG, HGM.Controls.VirtualTable, HGM.Button, Data.DB, MemDS, DBAccess, Ora,
-  OraCall;
+  acPNG, HGM.Controls.VirtualTable, HGM.Button, Data.DB;
 
 type
   TCRMMode = (cmNormal, cmMini);
@@ -225,8 +224,6 @@ type
     Panel36: TPanel;
     Label26: TLabel;
     Label23: TLabel;
-    oraAddPrivCat: TOraStoredProc;
-    oraApplySecAdmin: TOraStoredProc;
     ButtonFlatSECApply: TButtonFlat;
     PanelUserPrompt: TPanel;
     EditUPLogin: TEdit;
@@ -234,7 +231,6 @@ type
     LabelUPCaption: TLabel;
     ButtonFlatUPCancel: TButtonFlat;
     ButtonFlatUPOK: TButtonFlat;
-    OraSession: TOraSession;
     procedure FormCreate(Sender: TObject);
     procedure TableExCostomersGetData(FCol, FRow: Integer; var Value: string);
     procedure TimerTimeTimer(Sender: TObject);
@@ -784,7 +780,7 @@ begin
 end;
 
 procedure TFormMain.ButtonFlatSECApplyClick(Sender: TObject);
-begin
+begin            {
  if not OraSession.Connected then
   begin
    if MessageBox(Application.Handle, 'Сначала необходимо подключиться к базе. Подключиться сейчас?', '', MB_ICONINFORMATION or MB_YESNOCANCEL) = ID_YES then
@@ -795,7 +791,7 @@ begin
   end;
  oraApplySecAdmin.ParamByName('P_USERNAME').AsString:=EditSECFor.Text;
  oraApplySecAdmin.Session:=OraSession;
- oraApplySecAdmin.Execute;
+ oraApplySecAdmin.Execute;   }
 end;
 
 procedure TFormMain.ButtonFlatShowCustomerInfoClick(Sender: TObject);
